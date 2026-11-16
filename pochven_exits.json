@@ -1,0 +1,4733 @@
+{
+  "schema": 1,
+  "generated_utc": "2026-11-16T18:45:57Z",
+  "constants": {
+    "ly_meters": 9460730472580800.0,
+    "filament_range_ly": 2.5
+  },
+  "filters": {
+    "pochven_region_id": 10000070,
+    "candidate_excluded_regions": {
+      "10000004": "UUA-F4",
+      "10000017": "J7HZ-F",
+      "10000019": "A821-A",
+      "10000070": "Pochven",
+      "10001000": "Yasna Zakh",
+      "10001004": "Exordium"
+    },
+    "transit_excluded_regions": {
+      "10000004": "UUA-F4",
+      "10000017": "J7HZ-F",
+      "10000019": "A821-A",
+      "10000070": "Pochven",
+      "10001004": "Exordium"
+    }
+  },
+  "sde": {
+    "systems": 8490,
+    "regions": 114,
+    "files": {
+      "mapSolarSystems.csv": 2395626,
+      "mapSolarSystemJumps.csv": 936906,
+      "mapRegions.csv": 14891
+    }
+  },
+  "counts": {
+    "pochven_systems": 27,
+    "exit_systems": 389,
+    "exit_pairs": 556
+  },
+  "pochven_systems": [
+    {
+      "id": 30045328,
+      "name": "Ahtila",
+      "x": -2.1246307643938672e+17,
+      "y": 9.587730590358309e+16,
+      "z": 1.4141429777767824e+17,
+      "exits": [
+        {
+          "id": 30045323,
+          "name": "Astoh",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.612424,
+          "ly": 0.697058
+        },
+        {
+          "id": 30045321,
+          "name": "Uchomida",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.494727,
+          "ly": 1.036613
+        },
+        {
+          "id": 30045325,
+          "name": "Rohamaa",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.504717,
+          "ly": 1.617682
+        },
+        {
+          "id": 30045327,
+          "name": "Tsuruma",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.542633,
+          "ly": 1.654446
+        },
+        {
+          "id": 30045342,
+          "name": "Akidagi",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.444939,
+          "ly": 1.687399
+        },
+        {
+          "id": 30045322,
+          "name": "Samanuni",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.652785,
+          "ly": 1.785493
+        },
+        {
+          "id": 30045324,
+          "name": "Onnamon",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.555534,
+          "ly": 1.957064
+        },
+        {
+          "id": 30045326,
+          "name": "Uuhulanen",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.492079,
+          "ly": 1.998111
+        },
+        {
+          "id": 30045320,
+          "name": "Pavanakka",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.395649,
+          "ly": 2.078826
+        },
+        {
+          "id": 30045337,
+          "name": "Ikoskio",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.283312,
+          "ly": 2.168647
+        },
+        {
+          "id": 30045314,
+          "name": "Kinakka",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.415623,
+          "ly": 2.173277
+        },
+        {
+          "id": 30045333,
+          "name": "Prism",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.235087,
+          "ly": 2.314359
+        },
+        {
+          "id": 30045340,
+          "name": "Aivonen",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.37733,
+          "ly": 2.314846
+        }
+      ]
+    },
+    {
+      "id": 30002652,
+      "name": "Ala",
+      "x": -1.7479704206821088e+17,
+      "y": 3.5724081788184212e+16,
+      "z": -9752209292039104.0,
+      "exits": [
+        {
+          "id": 30002651,
+          "name": "Fasse",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.425743,
+          "ly": 0.590418
+        },
+        {
+          "id": 30002650,
+          "name": "Ney",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.456755,
+          "ly": 0.632268
+        },
+        {
+          "id": 30002653,
+          "name": "Gratesier",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.435103,
+          "ly": 0.890112
+        },
+        {
+          "id": 30002649,
+          "name": "Boillair",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.52323,
+          "ly": 0.993982
+        },
+        {
+          "id": 30002648,
+          "name": "Ardene",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.55178,
+          "ly": 1.413378
+        },
+        {
+          "id": 30002654,
+          "name": "Schoorasana",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.4481,
+          "ly": 1.595504
+        },
+        {
+          "id": 30002705,
+          "name": "Croleur",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.573767,
+          "ly": 1.70828
+        },
+        {
+          "id": 30002700,
+          "name": "Bawilan",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.539168,
+          "ly": 1.714205
+        },
+        {
+          "id": 30002701,
+          "name": "Atier",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.626695,
+          "ly": 2.035176
+        },
+        {
+          "id": 30002696,
+          "name": "Stegette",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.453173,
+          "ly": 2.142644
+        },
+        {
+          "id": 30003024,
+          "name": "Marosier",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.603446,
+          "ly": 2.207666
+        },
+        {
+          "id": 30003506,
+          "name": "Saana",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.552729,
+          "ly": 2.231711
+        },
+        {
+          "id": 30002697,
+          "name": "Ravarin",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.372319,
+          "ly": 2.296108
+        },
+        {
+          "id": 30003030,
+          "name": "Ardallabier",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.713632,
+          "ly": 2.444328
+        }
+      ]
+    },
+    {
+      "id": 30003046,
+      "name": "Angymonne",
+      "x": -2.1341146126043174e+17,
+      "y": 1.4796525309622514e+16,
+      "z": 2.4458159382975996e+16,
+      "exits": [
+        {
+          "id": 30003056,
+          "name": "Muer",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.581164,
+          "ly": 0.349386
+        },
+        {
+          "id": 30003045,
+          "name": "Enedore",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.646758,
+          "ly": 0.643887
+        },
+        {
+          "id": 30003054,
+          "name": "Scuelazyns",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.641687,
+          "ly": 0.719431
+        },
+        {
+          "id": 30003047,
+          "name": "Averon",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.576088,
+          "ly": 0.787525
+        },
+        {
+          "id": 30003051,
+          "name": "Antollare",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.689427,
+          "ly": 0.982845
+        },
+        {
+          "id": 30003050,
+          "name": "Odixie",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.550303,
+          "ly": 1.011369
+        },
+        {
+          "id": 30003048,
+          "name": "Carirgnottin",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.624878,
+          "ly": 1.038238
+        },
+        {
+          "id": 30004992,
+          "name": "Palmon",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.44871,
+          "ly": 1.161664
+        },
+        {
+          "id": 30003015,
+          "name": "Aice",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.691167,
+          "ly": 1.337712
+        },
+        {
+          "id": 30003013,
+          "name": "Jurlesel",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.59925,
+          "ly": 1.50034
+        },
+        {
+          "id": 30003043,
+          "name": "Uphene",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.578327,
+          "ly": 1.502501
+        },
+        {
+          "id": 30003012,
+          "name": "Amattens",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.59005,
+          "ly": 1.564646
+        },
+        {
+          "id": 30003053,
+          "name": "Avele",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.710144,
+          "ly": 1.636932
+        },
+        {
+          "id": 30004989,
+          "name": "Annages",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.660626,
+          "ly": 1.669311
+        },
+        {
+          "id": 30003049,
+          "name": "Laic",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.793173,
+          "ly": 1.689758
+        },
+        {
+          "id": 30003014,
+          "name": "Bereye",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.9,
+          "ly": 1.856437
+        },
+        {
+          "id": 30003052,
+          "name": "Tolle",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.708052,
+          "ly": 1.897199
+        },
+        {
+          "id": 30005306,
+          "name": "Vaere",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.821577,
+          "ly": 1.949296
+        },
+        {
+          "id": 30004987,
+          "name": "Deninard",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.709388,
+          "ly": 1.950767
+        },
+        {
+          "id": 30003016,
+          "name": "Junsoraert",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.524183,
+          "ly": 2.006026
+        },
+        {
+          "id": 30004991,
+          "name": "Vitrauze",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.299746,
+          "ly": 2.037188
+        },
+        {
+          "id": 30003040,
+          "name": "Bille",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.515858,
+          "ly": 2.061366
+        },
+        {
+          "id": 30003039,
+          "name": "Leremblompes",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.647193,
+          "ly": 2.062459
+        },
+        {
+          "id": 30003009,
+          "name": "Arnatele",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.622931,
+          "ly": 2.08212
+        },
+        {
+          "id": 30003055,
+          "name": "Aydoteaux",
+          "region_id": 10000037,
+          "region": "Everyshore",
+          "security": 0.680553,
+          "ly": 2.323621
+        },
+        {
+          "id": 30005024,
+          "name": "Atlangeins",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.880487,
+          "ly": 2.350348
+        },
+        {
+          "id": 30004988,
+          "name": "Hulmate",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.431834,
+          "ly": 2.38172
+        },
+        {
+          "id": 30024971,
+          "name": "Hecarrin",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.827598,
+          "ly": 2.391733
+        },
+        {
+          "id": 30004990,
+          "name": "Onne",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.38828,
+          "ly": 2.411569
+        }
+      ]
+    },
+    {
+      "id": 30002702,
+      "name": "Archee",
+      "x": -1.7631761026681232e+17,
+      "y": 5.6655775707342856e+16,
+      "z": -1001179200203916.0,
+      "exits": [
+        {
+          "id": 30002704,
+          "name": "Adrallezoen",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.478932,
+          "ly": 0.884177
+        },
+        {
+          "id": 30002700,
+          "name": "Bawilan",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.539168,
+          "ly": 0.972562
+        },
+        {
+          "id": 30002701,
+          "name": "Atier",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.626695,
+          "ly": 1.295811
+        },
+        {
+          "id": 30002705,
+          "name": "Croleur",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.573767,
+          "ly": 1.335646
+        },
+        {
+          "id": 30002703,
+          "name": "Brybier",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.58084,
+          "ly": 1.519092
+        },
+        {
+          "id": 30002654,
+          "name": "Schoorasana",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.4481,
+          "ly": 1.634024
+        },
+        {
+          "id": 30002653,
+          "name": "Gratesier",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.435103,
+          "ly": 1.859735
+        },
+        {
+          "id": 30002699,
+          "name": "Brapelille",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.672466,
+          "ly": 1.966164
+        },
+        {
+          "id": 30002736,
+          "name": "Ainaille",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.845294,
+          "ly": 2.471087
+        },
+        {
+          "id": 30002735,
+          "name": "Caretyn",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.823123,
+          "ly": 2.489538
+        },
+        {
+          "id": 30002648,
+          "name": "Ardene",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.55178,
+          "ly": 2.491064
+        }
+      ]
+    },
+    {
+      "id": 30001381,
+      "name": "Arvasaras",
+      "x": -1.485905176442545e+17,
+      "y": 6.9461571693686216e+16,
+      "z": 1.5240615153401283e+17,
+      "exits": [
+        {
+          "id": 30001380,
+          "name": "Vellaine",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.581139,
+          "ly": 0.952834
+        },
+        {
+          "id": 30001384,
+          "name": "Autaris",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.468632,
+          "ly": 1.07491
+        },
+        {
+          "id": 30001382,
+          "name": "Akonoinen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.49451,
+          "ly": 1.42191
+        },
+        {
+          "id": 30002754,
+          "name": "Alikara",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.711293,
+          "ly": 1.456137
+        },
+        {
+          "id": 30001385,
+          "name": "Jan",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.416954,
+          "ly": 1.558148
+        },
+        {
+          "id": 30002743,
+          "name": "Ohvosamon",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.730094,
+          "ly": 1.585335
+        },
+        {
+          "id": 30001383,
+          "name": "Vaajaita",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.462064,
+          "ly": 1.826403
+        },
+        {
+          "id": 30001370,
+          "name": "Ouranienen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.693806,
+          "ly": 2.07697
+        },
+        {
+          "id": 30001365,
+          "name": "Isikemi",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.780999,
+          "ly": 2.237295
+        },
+        {
+          "id": 30002755,
+          "name": "Usi",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.543759,
+          "ly": 2.237314
+        },
+        {
+          "id": 30001367,
+          "name": "Hageken",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.604188,
+          "ly": 2.25524
+        },
+        {
+          "id": 30001368,
+          "name": "Uemisaisen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.605931,
+          "ly": 2.292253
+        },
+        {
+          "id": 30002744,
+          "name": "Auviken",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.819648,
+          "ly": 2.296105
+        },
+        {
+          "id": 30002748,
+          "name": "Jeras",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.57134,
+          "ly": 2.297174
+        },
+        {
+          "id": 30002749,
+          "name": "Kausaaja",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.740705,
+          "ly": 2.368402
+        },
+        {
+          "id": 30001389,
+          "name": "Isanamo",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.635016,
+          "ly": 2.38753
+        },
+        {
+          "id": 30002753,
+          "name": "Aikoro",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.771435,
+          "ly": 2.488223
+        }
+      ]
+    },
+    {
+      "id": 30002225,
+      "name": "Harva",
+      "x": -1.6452309844355677e+17,
+      "y": 7.119049617069632e+16,
+      "z": -9.873862362250131e+16,
+      "exits": [
+        {
+          "id": 30002224,
+          "name": "Charra",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.754711,
+          "ly": 0.819243
+        },
+        {
+          "id": 30002222,
+          "name": "Airshaz",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.727185,
+          "ly": 0.921131
+        },
+        {
+          "id": 30002223,
+          "name": "Patzcha",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.727015,
+          "ly": 1.027551
+        },
+        {
+          "id": 30002220,
+          "name": "Aghesi",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.770818,
+          "ly": 1.07156
+        },
+        {
+          "id": 30002258,
+          "name": "Nadohman",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.748868,
+          "ly": 1.343994
+        },
+        {
+          "id": 30002257,
+          "name": "Moussou",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.820544,
+          "ly": 1.407938
+        },
+        {
+          "id": 30002221,
+          "name": "Fabin",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.720938,
+          "ly": 1.428309
+        },
+        {
+          "id": 30003558,
+          "name": "Madimal",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.650428,
+          "ly": 1.500536
+        },
+        {
+          "id": 30002208,
+          "name": "Ilonarav",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.750137,
+          "ly": 1.578162
+        },
+        {
+          "id": 30002205,
+          "name": "Armala",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.782163,
+          "ly": 1.694544
+        },
+        {
+          "id": 30003526,
+          "name": "Murzi",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.619386,
+          "ly": 1.74299
+        },
+        {
+          "id": 30002259,
+          "name": "Sahdil",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.706806,
+          "ly": 1.748542
+        },
+        {
+          "id": 30002206,
+          "name": "Murema",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.664702,
+          "ly": 1.841986
+        },
+        {
+          "id": 30001648,
+          "name": "Adahum",
+          "region_id": 10000020,
+          "region": "Tash-Murkon",
+          "security": 0.607686,
+          "ly": 1.929031
+        },
+        {
+          "id": 30003482,
+          "name": "Mista",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.53738,
+          "ly": 1.930929
+        },
+        {
+          "id": 30003485,
+          "name": "Andabiar",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.607272,
+          "ly": 1.935335
+        },
+        {
+          "id": 30002230,
+          "name": "Vashkah",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.744503,
+          "ly": 1.936757
+        },
+        {
+          "id": 30003525,
+          "name": "Bagodan",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.717179,
+          "ly": 2.015404
+        },
+        {
+          "id": 30002227,
+          "name": "Rasile",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.869486,
+          "ly": 2.047166
+        },
+        {
+          "id": 30002268,
+          "name": "Adia",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.666568,
+          "ly": 2.047306
+        },
+        {
+          "id": 30003551,
+          "name": "Jaswelu",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.842187,
+          "ly": 2.073431
+        },
+        {
+          "id": 30002267,
+          "name": "Shabura",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.67306,
+          "ly": 2.075469
+        },
+        {
+          "id": 30002207,
+          "name": "Cailanar",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.684324,
+          "ly": 2.082753
+        },
+        {
+          "id": 30003549,
+          "name": "Lashkai",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.917045,
+          "ly": 2.084063
+        },
+        {
+          "id": 30003547,
+          "name": "Hamse",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.85522,
+          "ly": 2.086859
+        },
+        {
+          "id": 30003546,
+          "name": "Maiah",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.798763,
+          "ly": 2.089172
+        },
+        {
+          "id": 30003548,
+          "name": "Barira",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.815271,
+          "ly": 2.099495
+        },
+        {
+          "id": 30002226,
+          "name": "Thebeka",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.873772,
+          "ly": 2.113059
+        },
+        {
+          "id": 30003523,
+          "name": "Hama",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.839545,
+          "ly": 2.174317
+        },
+        {
+          "id": 30003554,
+          "name": "Jambu",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.518606,
+          "ly": 2.21406
+        },
+        {
+          "id": 30002204,
+          "name": "Gaha",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.73936,
+          "ly": 2.220824
+        },
+        {
+          "id": 30003538,
+          "name": "Merz",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.656137,
+          "ly": 2.269342
+        },
+        {
+          "id": 30003522,
+          "name": "Sarum Prime",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.949,
+          "ly": 2.297549
+        },
+        {
+          "id": 30002251,
+          "name": "Sadye",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.603089,
+          "ly": 2.303006
+        },
+        {
+          "id": 30003545,
+          "name": "Yuhelia",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.799609,
+          "ly": 2.317112
+        },
+        {
+          "id": 30002253,
+          "name": "Arshat",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.580904,
+          "ly": 2.325846
+        },
+        {
+          "id": 30002228,
+          "name": "Nererut",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.764729,
+          "ly": 2.335031
+        },
+        {
+          "id": 30002234,
+          "name": "Nifshed",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.654727,
+          "ly": 2.3676
+        },
+        {
+          "id": 30003553,
+          "name": "Warouh",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.525562,
+          "ly": 2.409567
+        },
+        {
+          "id": 30003555,
+          "name": "Bittanshal",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.480322,
+          "ly": 2.420839
+        },
+        {
+          "id": 30003540,
+          "name": "Sirkahri",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.534216,
+          "ly": 2.484936
+        },
+        {
+          "id": 30003544,
+          "name": "Galeh",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.448164,
+          "ly": 2.493032
+        }
+      ]
+    },
+    {
+      "id": 30045329,
+      "name": "Ichoriya",
+      "x": -2.1976102350913354e+17,
+      "y": 9.7958851510767e+16,
+      "z": 1.4131665736064878e+17,
+      "exits": [
+        {
+          "id": 30045323,
+          "name": "Astoh",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.612424,
+          "ly": 0.552179
+        },
+        {
+          "id": 30045325,
+          "name": "Rohamaa",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.504717,
+          "ly": 1.022857
+        },
+        {
+          "id": 30045342,
+          "name": "Akidagi",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.444939,
+          "ly": 1.292227
+        },
+        {
+          "id": 30045320,
+          "name": "Pavanakka",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.395649,
+          "ly": 1.406784
+        },
+        {
+          "id": 30045321,
+          "name": "Uchomida",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.494727,
+          "ly": 1.479324
+        },
+        {
+          "id": 30045340,
+          "name": "Aivonen",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.37733,
+          "ly": 1.54117
+        },
+        {
+          "id": 30045327,
+          "name": "Tsuruma",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.542633,
+          "ly": 1.776871
+        },
+        {
+          "id": 30045314,
+          "name": "Kinakka",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.415623,
+          "ly": 1.895751
+        },
+        {
+          "id": 30045322,
+          "name": "Samanuni",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.652785,
+          "ly": 2.311431
+        },
+        {
+          "id": 30045324,
+          "name": "Onnamon",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.555534,
+          "ly": 2.341028
+        },
+        {
+          "id": 30045339,
+          "name": "Enaluri",
+          "region_id": 10000069,
+          "region": "Black Rise",
+          "security": 0.327798,
+          "ly": 2.487192
+        }
+      ]
+    },
+    {
+      "id": 30005005,
+      "name": "Ignebaener",
+      "x": -2.38290946220046e+17,
+      "y": 5.55893507074342e+16,
+      "z": 4.385875656214017e+16,
+      "exits": [
+        {
+          "id": 30005007,
+          "name": "Lisbaetanne",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.373263,
+          "ly": 0.734541
+        },
+        {
+          "id": 30005004,
+          "name": "Attyn",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.669496,
+          "ly": 0.765324
+        },
+        {
+          "id": 30005319,
+          "name": "Raneilles",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.550235,
+          "ly": 1.148389
+        },
+        {
+          "id": 30005002,
+          "name": "Laurvier",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.73105,
+          "ly": 1.178847
+        },
+        {
+          "id": 30005006,
+          "name": "Aere",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.609062,
+          "ly": 1.370366
+        },
+        {
+          "id": 30005320,
+          "name": "Hevrice",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.418609,
+          "ly": 1.389068
+        },
+        {
+          "id": 30005330,
+          "name": "Arraron",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.471987,
+          "ly": 1.427073
+        },
+        {
+          "id": 30005001,
+          "name": "Arnon",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.8,
+          "ly": 1.453453
+        },
+        {
+          "id": 30005317,
+          "name": "Ekuenbiron",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.793052,
+          "ly": 1.599305
+        },
+        {
+          "id": 30005331,
+          "name": "Chantrousse",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.639317,
+          "ly": 1.625638
+        },
+        {
+          "id": 30035305,
+          "name": "Clacille",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.870855,
+          "ly": 1.667155
+        },
+        {
+          "id": 30005332,
+          "name": "Osmomonne",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.768066,
+          "ly": 1.821371
+        },
+        {
+          "id": 30005003,
+          "name": "Adirain",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.423686,
+          "ly": 1.823182
+        },
+        {
+          "id": 30005333,
+          "name": "Stou",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.518818,
+          "ly": 1.85397
+        },
+        {
+          "id": 30005321,
+          "name": "Jovainnon",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.298141,
+          "ly": 1.880108
+        },
+        {
+          "id": 30005318,
+          "name": "Vay",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.758522,
+          "ly": 1.940605
+        },
+        {
+          "id": 30005334,
+          "name": "Tierijev",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.83797,
+          "ly": 1.968237
+        },
+        {
+          "id": 30005316,
+          "name": "Luse",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.892424,
+          "ly": 1.978352
+        },
+        {
+          "id": 30005315,
+          "name": "Eletta",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.943509,
+          "ly": 1.9912
+        },
+        {
+          "id": 30005304,
+          "name": "Alentene",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.866783,
+          "ly": 1.998231
+        },
+        {
+          "id": 30005303,
+          "name": "Merolles",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.884628,
+          "ly": 2.140338
+        },
+        {
+          "id": 30045305,
+          "name": "Clellinon",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.848466,
+          "ly": 2.229894
+        },
+        {
+          "id": 30015305,
+          "name": "Adallier",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.885123,
+          "ly": 2.231963
+        },
+        {
+          "id": 30005202,
+          "name": "Emsar",
+          "region_id": 10000067,
+          "region": "Genesis",
+          "security": 0.712929,
+          "ly": 2.251537
+        },
+        {
+          "id": 30005310,
+          "name": "Scheenins",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.537429,
+          "ly": 2.258395
+        },
+        {
+          "id": 30003843,
+          "name": "Avaux",
+          "region_id": 10000048,
+          "region": "Placid",
+          "security": 0.447705,
+          "ly": 2.276921
+        },
+        {
+          "id": 30005299,
+          "name": "Muetralle",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.239964,
+          "ly": 2.29095
+        },
+        {
+          "id": 30005311,
+          "name": "Amygnon",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.637569,
+          "ly": 2.291997
+        },
+        {
+          "id": 30005329,
+          "name": "Amoderia",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.404852,
+          "ly": 2.296589
+        },
+        {
+          "id": 30005008,
+          "name": "Aeschee",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.15653,
+          "ly": 2.334196
+        },
+        {
+          "id": 30005322,
+          "name": "Scolluzer",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.822736,
+          "ly": 2.363605
+        },
+        {
+          "id": 30004978,
+          "name": "Pemene",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.450192,
+          "ly": 2.377271
+        },
+        {
+          "id": 30005307,
+          "name": "Aidart",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.612358,
+          "ly": 2.429464
+        },
+        {
+          "id": 30005305,
+          "name": "Cistuvaert",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.949,
+          "ly": 2.469251
+        }
+      ]
+    },
+    {
+      "id": 30002797,
+      "name": "Kaunokka",
+      "x": -1.755368741837232e+17,
+      "y": 8.082587348803942e+16,
+      "z": 1.0549554703189131e+17,
+      "exits": [
+        {
+          "id": 30002798,
+          "name": "Venilen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.611822,
+          "ly": 0.781258
+        },
+        {
+          "id": 30002771,
+          "name": "Kulelen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.475369,
+          "ly": 1.042307
+        },
+        {
+          "id": 30002794,
+          "name": "Yria",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.50122,
+          "ly": 1.055239
+        },
+        {
+          "id": 30002808,
+          "name": "Oto",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.39809,
+          "ly": 1.09817
+        },
+        {
+          "id": 30002773,
+          "name": "Hogimo",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.557445,
+          "ly": 1.450947
+        },
+        {
+          "id": 30002795,
+          "name": "Oshaima",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.453128,
+          "ly": 1.647208
+        },
+        {
+          "id": 30002799,
+          "name": "Oisio",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.533575,
+          "ly": 1.721978
+        },
+        {
+          "id": 30002809,
+          "name": "Sujarento",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.311136,
+          "ly": 1.8824
+        },
+        {
+          "id": 30002769,
+          "name": "Enderailen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.448785,
+          "ly": 1.986519
+        },
+        {
+          "id": 30002807,
+          "name": "Nagamanen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.304726,
+          "ly": 2.006267
+        },
+        {
+          "id": 30002806,
+          "name": "Hasmijaala",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.335829,
+          "ly": 2.021302
+        },
+        {
+          "id": 30002772,
+          "name": "Rairomon",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.62936,
+          "ly": 2.050111
+        },
+        {
+          "id": 30002811,
+          "name": "Onatoh",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.296425,
+          "ly": 2.074016
+        },
+        {
+          "id": 30001408,
+          "name": "Ruvas",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.780765,
+          "ly": 2.074082
+        },
+        {
+          "id": 30002813,
+          "name": "Tama",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.282556,
+          "ly": 2.09413
+        },
+        {
+          "id": 30002796,
+          "name": "Hysera",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.397183,
+          "ly": 2.10756
+        },
+        {
+          "id": 30001409,
+          "name": "Umokka",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.561301,
+          "ly": 2.2087
+        },
+        {
+          "id": 30002774,
+          "name": "Huttaken",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.572713,
+          "ly": 2.264776
+        },
+        {
+          "id": 30002810,
+          "name": "Eranakko",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.324033,
+          "ly": 2.285042
+        },
+        {
+          "id": 30001407,
+          "name": "Todaki",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.949,
+          "ly": 2.344068
+        },
+        {
+          "id": 30002812,
+          "name": "Tannolen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.303626,
+          "ly": 2.389921
+        },
+        {
+          "id": 30001405,
+          "name": "Kakakela",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.949,
+          "ly": 2.393802
+        }
+      ]
+    },
+    {
+      "id": 30001372,
+      "name": "Kino",
+      "x": -1.6091547152640787e+17,
+      "y": 6.7043767919059016e+16,
+      "z": 1.2510750589804909e+17,
+      "exits": [
+        {
+          "id": 30001371,
+          "name": "Erenta",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.634758,
+          "ly": 0.672329
+        },
+        {
+          "id": 30001415,
+          "name": "Kuoka",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.576705,
+          "ly": 1.089705
+        },
+        {
+          "id": 30001368,
+          "name": "Uemisaisen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.605931,
+          "ly": 1.184982
+        },
+        {
+          "id": 30001414,
+          "name": "Ajanen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.633785,
+          "ly": 1.33776
+        },
+        {
+          "id": 30001370,
+          "name": "Ouranienen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.693806,
+          "ly": 1.34183
+        },
+        {
+          "id": 30001410,
+          "name": "Kirras",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.821743,
+          "ly": 1.507251
+        },
+        {
+          "id": 30001374,
+          "name": "Iidoken",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.843816,
+          "ly": 1.560455
+        },
+        {
+          "id": 30001412,
+          "name": "Tsukuras",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.732158,
+          "ly": 1.621745
+        },
+        {
+          "id": 30001369,
+          "name": "Sotrentaira",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.51257,
+          "ly": 1.642225
+        },
+        {
+          "id": 30001411,
+          "name": "Autama",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.775104,
+          "ly": 1.704169
+        },
+        {
+          "id": 30001377,
+          "name": "Sarekuwa",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.936502,
+          "ly": 1.884808
+        },
+        {
+          "id": 30001389,
+          "name": "Isanamo",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.635016,
+          "ly": 2.039983
+        },
+        {
+          "id": 30031407,
+          "name": "Hitanishio",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.946749,
+          "ly": 2.048349
+        },
+        {
+          "id": 30001373,
+          "name": "Raussinen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.453233,
+          "ly": 2.06594
+        },
+        {
+          "id": 30001362,
+          "name": "Veisto",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.842495,
+          "ly": 2.242217
+        },
+        {
+          "id": 30002743,
+          "name": "Ohvosamon",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.730094,
+          "ly": 2.294098
+        },
+        {
+          "id": 30002798,
+          "name": "Venilen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.611822,
+          "ly": 2.457852
+        },
+        {
+          "id": 30002759,
+          "name": "Uuna",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.383502,
+          "ly": 2.462993
+        },
+        {
+          "id": 30002755,
+          "name": "Usi",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.543759,
+          "ly": 2.47239
+        }
+      ]
+    },
+    {
+      "id": 30031392,
+      "name": "Komo",
+      "x": -1.329771613652161e+17,
+      "y": 9.870623247993717e+16,
+      "z": 1.3092557727474842e+17,
+      "exits": [
+        {
+          "id": 30002819,
+          "name": "Motsu",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.872794,
+          "ly": 0.448447
+        },
+        {
+          "id": 30002818,
+          "name": "Oichiya",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.847664,
+          "ly": 0.684069
+        },
+        {
+          "id": 30002780,
+          "name": "Muvolailen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.708087,
+          "ly": 0.721129
+        },
+        {
+          "id": 30002752,
+          "name": "Ahynada",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.803548,
+          "ly": 1.041004
+        },
+        {
+          "id": 30002815,
+          "name": "Isenairos",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.803999,
+          "ly": 1.076038
+        },
+        {
+          "id": 30002775,
+          "name": "Paara",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.778535,
+          "ly": 1.1559
+        },
+        {
+          "id": 30041392,
+          "name": "Laah",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.919513,
+          "ly": 1.268802
+        },
+        {
+          "id": 30002739,
+          "name": "Isaziwa",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.720814,
+          "ly": 1.409111
+        },
+        {
+          "id": 30002750,
+          "name": "Oiniken",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.718557,
+          "ly": 1.425223
+        },
+        {
+          "id": 30002816,
+          "name": "Saila",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.893457,
+          "ly": 1.49414
+        },
+        {
+          "id": 30001392,
+          "name": "Amsen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.949,
+          "ly": 1.531905
+        },
+        {
+          "id": 30021392,
+          "name": "Kappas",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.869985,
+          "ly": 1.541057
+        },
+        {
+          "id": 30011392,
+          "name": "Jouvulen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.889763,
+          "ly": 1.684001
+        },
+        {
+          "id": 30002753,
+          "name": "Aikoro",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.771435,
+          "ly": 1.755222
+        },
+        {
+          "id": 30002776,
+          "name": "Annaro",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.80747,
+          "ly": 1.869159
+        },
+        {
+          "id": 30002751,
+          "name": "Kaimon",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.686052,
+          "ly": 1.882432
+        },
+        {
+          "id": 30001364,
+          "name": "Funtanainen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.858976,
+          "ly": 1.884546
+        },
+        {
+          "id": 30002814,
+          "name": "Uotila",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.574103,
+          "ly": 1.944454
+        },
+        {
+          "id": 30001393,
+          "name": "Malkalen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.948175,
+          "ly": 1.974699
+        },
+        {
+          "id": 30001378,
+          "name": "Ekura",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.876417,
+          "ly": 1.98413
+        },
+        {
+          "id": 30002740,
+          "name": "Eitu",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.538036,
+          "ly": 2.064479
+        },
+        {
+          "id": 30001363,
+          "name": "Sobaseki",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.841025,
+          "ly": 2.131769
+        },
+        {
+          "id": 30002738,
+          "name": "Inoue",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.570857,
+          "ly": 2.23
+        },
+        {
+          "id": 30002749,
+          "name": "Kausaaja",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.740705,
+          "ly": 2.234054
+        },
+        {
+          "id": 30001395,
+          "name": "Ylandoki",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.832837,
+          "ly": 2.280491
+        },
+        {
+          "id": 30001379,
+          "name": "Tunttaras",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.885312,
+          "ly": 2.344346
+        },
+        {
+          "id": 30001362,
+          "name": "Veisto",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.842495,
+          "ly": 2.357963
+        },
+        {
+          "id": 30001365,
+          "name": "Isikemi",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.780999,
+          "ly": 2.360581
+        },
+        {
+          "id": 30001376,
+          "name": "Nourvukaiken",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.816557,
+          "ly": 2.40531
+        },
+        {
+          "id": 30002747,
+          "name": "Kakki",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.8397,
+          "ly": 2.458449
+        }
+      ]
+    },
+    {
+      "id": 30002737,
+      "name": "Konola",
+      "x": -1.3163566136378534e+17,
+      "y": 9.929795890479451e+16,
+      "z": 1.4699167278862003e+17,
+      "exits": [
+        {
+          "id": 30002740,
+          "name": "Eitu",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.538036,
+          "ly": 0.645756
+        },
+        {
+          "id": 30002739,
+          "name": "Isaziwa",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.720814,
+          "ly": 0.721162
+        },
+        {
+          "id": 30002738,
+          "name": "Inoue",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.570857,
+          "ly": 0.982245
+        },
+        {
+          "id": 30002741,
+          "name": "Horkkisen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.438425,
+          "ly": 0.993381
+        },
+        {
+          "id": 30002742,
+          "name": "Erila",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.448706,
+          "ly": 1.166142
+        },
+        {
+          "id": 30002750,
+          "name": "Oiniken",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.718557,
+          "ly": 1.195889
+        },
+        {
+          "id": 30001397,
+          "name": "Isseras",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.560588,
+          "ly": 1.292434
+        },
+        {
+          "id": 30001396,
+          "name": "Aakari",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.66223,
+          "ly": 1.373352
+        },
+        {
+          "id": 30002753,
+          "name": "Aikoro",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.771435,
+          "ly": 1.448096
+        },
+        {
+          "id": 30002819,
+          "name": "Motsu",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.872794,
+          "ly": 1.456675
+        },
+        {
+          "id": 30001395,
+          "name": "Ylandoki",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.832837,
+          "ly": 1.565173
+        },
+        {
+          "id": 30002818,
+          "name": "Oichiya",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.847664,
+          "ly": 1.678275
+        },
+        {
+          "id": 30001393,
+          "name": "Malkalen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.948175,
+          "ly": 1.719471
+        },
+        {
+          "id": 30002751,
+          "name": "Kaimon",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.686052,
+          "ly": 1.777883
+        },
+        {
+          "id": 30001392,
+          "name": "Amsen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.949,
+          "ly": 1.783754
+        },
+        {
+          "id": 30041392,
+          "name": "Laah",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.919513,
+          "ly": 1.935552
+        },
+        {
+          "id": 30002752,
+          "name": "Ahynada",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.803548,
+          "ly": 1.93754
+        },
+        {
+          "id": 30001365,
+          "name": "Isikemi",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.780999,
+          "ly": 2.000295
+        },
+        {
+          "id": 30021392,
+          "name": "Kappas",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.869985,
+          "ly": 2.036465
+        },
+        {
+          "id": 30001394,
+          "name": "Korama",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.770922,
+          "ly": 2.054447
+        },
+        {
+          "id": 30001364,
+          "name": "Funtanainen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.858976,
+          "ly": 2.082495
+        },
+        {
+          "id": 30002780,
+          "name": "Muvolailen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.708087,
+          "ly": 2.156771
+        },
+        {
+          "id": 30002815,
+          "name": "Isenairos",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.803999,
+          "ly": 2.175566
+        },
+        {
+          "id": 30002775,
+          "name": "Paara",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.778535,
+          "ly": 2.188402
+        },
+        {
+          "id": 30002749,
+          "name": "Kausaaja",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.740705,
+          "ly": 2.199048
+        },
+        {
+          "id": 30001366,
+          "name": "Uosusuokko",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.694322,
+          "ly": 2.201106
+        },
+        {
+          "id": 30001367,
+          "name": "Hageken",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.604188,
+          "ly": 2.273714
+        },
+        {
+          "id": 30001443,
+          "name": "Vuorrassi",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.528345,
+          "ly": 2.282378
+        },
+        {
+          "id": 30002816,
+          "name": "Saila",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.893457,
+          "ly": 2.352844
+        }
+      ]
+    },
+    {
+      "id": 30002079,
+      "name": "Krirald",
+      "x": -1.4304107052031302e+17,
+      "y": 2015403351327806.0,
+      "z": 4.3405186005652824e+16,
+      "exits": [
+        {
+          "id": 30002081,
+          "name": "Ansen",
+          "region_id": 10000042,
+          "region": "Metropolis",
+          "security": 0.13638,
+          "ly": 0.588042
+        },
+        {
+          "id": 30002078,
+          "name": "Arwa",
+          "region_id": 10000042,
+          "region": "Metropolis",
+          "security": 0.12731,
+          "ly": 0.615808
+        },
+        {
+          "id": 30002077,
+          "name": "Hakisalki",
+          "region_id": 10000042,
+          "region": "Metropolis",
+          "security": 0.211785,
+          "ly": 1.070452
+        },
+        {
+          "id": 30002080,
+          "name": "Arifsdald",
+          "region_id": 10000042,
+          "region": "Metropolis",
+          "security": 0.092769,
+          "ly": 1.156156
+        },
+        {
+          "id": 30002098,
+          "name": "Orfrold",
+          "region_id": 10000042,
+          "region": "Metropolis",
+          "security": 0.228674,
+          "ly": 1.775242
+        },
+        {
+          "id": 30002076,
+          "name": "Dudreda",
+          "region_id": 10000042,
+          "region": "Metropolis",
+          "security": 0.292149,
+          "ly": 1.824094
+        },
+        {
+          "id": 30002100,
+          "name": "Taff",
+          "region_id": 10000042,
+          "region": "Metropolis",
+          "security": 0.154256,
+          "ly": 2.101799
+        },
+        {
+          "id": 30002097,
+          "name": "Klogori",
+          "region_id": 10000042,
+          "region": "Metropolis",
+          "security": 0.298558,
+          "ly": 2.126869
+        },
+        {
+          "id": 30002099,
+          "name": "Egmar",
+          "region_id": 10000042,
+          "region": "Metropolis",
+          "security": 0.252872,
+          "ly": 2.227065
+        },
+        {
+          "id": 30002102,
+          "name": "Gukarla",
+          "region_id": 10000042,
+          "region": "Metropolis",
+          "security": 0.124563,
+          "ly": 2.379146
+        },
+        {
+          "id": 30002101,
+          "name": "Ualkin",
+          "region_id": 10000042,
+          "region": "Metropolis",
+          "security": 0.15012,
+          "ly": 2.400463
+        },
+        {
+          "id": 30002721,
+          "name": "Rorsins",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.125204,
+          "ly": 2.481311
+        },
+        {
+          "id": 30002050,
+          "name": "Hagilur",
+          "region_id": 10000042,
+          "region": "Metropolis",
+          "security": 0.362024,
+          "ly": 2.487515
+        }
+      ]
+    },
+    {
+      "id": 30000021,
+      "name": "Kuharah",
+      "x": -7.437981085374782e+16,
+      "y": 3.2538969531086932e+16,
+      "z": -1.0053118849015414e+17,
+      "exits": [
+        {
+          "id": 30000018,
+          "name": "Kazna",
+          "region_id": 10000001,
+          "region": "Derelik",
+          "security": 0.231263,
+          "ly": 0.870826
+        },
+        {
+          "id": 30000045,
+          "name": "Jaymass",
+          "region_id": 10000001,
+          "region": "Derelik",
+          "security": 0.216311,
+          "ly": 0.904761
+        },
+        {
+          "id": 30000046,
+          "name": "Mifrata",
+          "region_id": 10000001,
+          "region": "Derelik",
+          "security": 0.303803,
+          "ly": 1.32006
+        },
+        {
+          "id": 30000017,
+          "name": "Futzchag",
+          "region_id": 10000001,
+          "region": "Derelik",
+          "security": 0.172229,
+          "ly": 1.427298
+        },
+        {
+          "id": 30000022,
+          "name": "Jayneleb",
+          "region_id": 10000001,
+          "region": "Derelik",
+          "security": 0.11384,
+          "ly": 1.523935
+        },
+        {
+          "id": 30000015,
+          "name": "Sendaya",
+          "region_id": 10000001,
+          "region": "Derelik",
+          "security": 0.293933,
+          "ly": 1.703185
+        },
+        {
+          "id": 30000047,
+          "name": "Majamar",
+          "region_id": 10000001,
+          "region": "Derelik",
+          "security": 0.369186,
+          "ly": 1.74397
+        },
+        {
+          "id": 30000044,
+          "name": "Faspera",
+          "region_id": 10000001,
+          "region": "Derelik",
+          "security": 0.128258,
+          "ly": 1.762662
+        },
+        {
+          "id": 30000019,
+          "name": "Podion",
+          "region_id": 10000001,
+          "region": "Derelik",
+          "security": 0.109705,
+          "ly": 1.796034
+        },
+        {
+          "id": 30000049,
+          "name": "Camal",
+          "region_id": 10000001,
+          "region": "Derelik",
+          "security": 0.212977,
+          "ly": 1.81498
+        },
+        {
+          "id": 30000020,
+          "name": "Lilmad",
+          "region_id": 10000001,
+          "region": "Derelik",
+          "security": 0.160449,
+          "ly": 2.305084
+        },
+        {
+          "id": 30000050,
+          "name": "Fera",
+          "region_id": 10000001,
+          "region": "Derelik",
+          "security": 0.477246,
+          "ly": 2.388131
+        }
+      ]
+    },
+    {
+      "id": 30001445,
+      "name": "Nalvula",
+      "x": -1.463775247331922e+17,
+      "y": 9.133793560363506e+16,
+      "z": 1.643686638964247e+17,
+      "exits": [
+        {
+          "id": 30001447,
+          "name": "Taisy",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.328332,
+          "ly": 0.520255
+        },
+        {
+          "id": 30001443,
+          "name": "Vuorrassi",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.528345,
+          "ly": 0.843776
+        },
+        {
+          "id": 30001444,
+          "name": "Oimmo",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.463883,
+          "ly": 0.925116
+        },
+        {
+          "id": 30001446,
+          "name": "Otsasai",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.349161,
+          "ly": 0.945585
+        },
+        {
+          "id": 30001448,
+          "name": "Hakonen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.296379,
+          "ly": 0.950647
+        },
+        {
+          "id": 30001367,
+          "name": "Hageken",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.604188,
+          "ly": 1.243166
+        },
+        {
+          "id": 30001397,
+          "name": "Isseras",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.560588,
+          "ly": 1.286915
+        },
+        {
+          "id": 30001385,
+          "name": "Jan",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.416954,
+          "ly": 1.312552
+        },
+        {
+          "id": 30001382,
+          "name": "Akonoinen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.49451,
+          "ly": 1.411602
+        },
+        {
+          "id": 30001384,
+          "name": "Autaris",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.468632,
+          "ly": 1.593178
+        },
+        {
+          "id": 30001366,
+          "name": "Uosusuokko",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.694322,
+          "ly": 1.602943
+        },
+        {
+          "id": 30001396,
+          "name": "Aakari",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.66223,
+          "ly": 1.692422
+        },
+        {
+          "id": 30001395,
+          "name": "Ylandoki",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.832837,
+          "ly": 1.906271
+        },
+        {
+          "id": 30001383,
+          "name": "Vaajaita",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.462064,
+          "ly": 2.006094
+        },
+        {
+          "id": 30001380,
+          "name": "Vellaine",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.581139,
+          "ly": 2.029302
+        },
+        {
+          "id": 30001365,
+          "name": "Isikemi",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.780999,
+          "ly": 2.066318
+        },
+        {
+          "id": 30001394,
+          "name": "Korama",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.770922,
+          "ly": 2.256355
+        },
+        {
+          "id": 30002738,
+          "name": "Inoue",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.570857,
+          "ly": 2.320152
+        },
+        {
+          "id": 30001391,
+          "name": "Piekura",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.50597,
+          "ly": 2.320515
+        },
+        {
+          "id": 30001361,
+          "name": "Aurohunen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.37554,
+          "ly": 2.331071
+        },
+        {
+          "id": 30002742,
+          "name": "Erila",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.448706,
+          "ly": 2.427169
+        }
+      ]
+    },
+    {
+      "id": 30001413,
+      "name": "Nani",
+      "x": -1.480656962023041e+17,
+      "y": 7.779179222046872e+16,
+      "z": 1.2965664503124198e+17,
+      "exits": [
+        {
+          "id": 30001410,
+          "name": "Kirras",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.821743,
+          "ly": 0.580755
+        },
+        {
+          "id": 30001411,
+          "name": "Autama",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.775104,
+          "ly": 0.756544
+        },
+        {
+          "id": 30001374,
+          "name": "Iidoken",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.843816,
+          "ly": 0.814624
+        },
+        {
+          "id": 30001362,
+          "name": "Veisto",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.842495,
+          "ly": 0.908834
+        },
+        {
+          "id": 30001412,
+          "name": "Tsukuras",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.732158,
+          "ly": 1.07372
+        },
+        {
+          "id": 30031407,
+          "name": "Hitanishio",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.946749,
+          "ly": 1.112708
+        },
+        {
+          "id": 30001363,
+          "name": "Sobaseki",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.841025,
+          "ly": 1.213353
+        },
+        {
+          "id": 30001370,
+          "name": "Ouranienen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.693806,
+          "ly": 1.237881
+        },
+        {
+          "id": 30001377,
+          "name": "Sarekuwa",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.936502,
+          "ly": 1.327111
+        },
+        {
+          "id": 30002754,
+          "name": "Alikara",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.711293,
+          "ly": 1.416605
+        },
+        {
+          "id": 30021392,
+          "name": "Kappas",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.869985,
+          "ly": 1.444167
+        },
+        {
+          "id": 30001364,
+          "name": "Funtanainen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.858976,
+          "ly": 1.528359
+        },
+        {
+          "id": 30001389,
+          "name": "Isanamo",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.635016,
+          "ly": 1.737479
+        },
+        {
+          "id": 30001376,
+          "name": "Nourvukaiken",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.816557,
+          "ly": 1.769234
+        },
+        {
+          "id": 30002747,
+          "name": "Kakki",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.8397,
+          "ly": 1.79376
+        },
+        {
+          "id": 30002744,
+          "name": "Auviken",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.819648,
+          "ly": 1.812912
+        },
+        {
+          "id": 30002743,
+          "name": "Ohvosamon",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.730094,
+          "ly": 1.83467
+        },
+        {
+          "id": 30002749,
+          "name": "Kausaaja",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.740705,
+          "ly": 1.962385
+        },
+        {
+          "id": 30001365,
+          "name": "Isikemi",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.780999,
+          "ly": 2.022038
+        },
+        {
+          "id": 30001368,
+          "name": "Uemisaisen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.605931,
+          "ly": 2.02215
+        },
+        {
+          "id": 30002753,
+          "name": "Aikoro",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.771435,
+          "ly": 2.050867
+        },
+        {
+          "id": 30001414,
+          "name": "Ajanen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.633785,
+          "ly": 2.06235
+        },
+        {
+          "id": 30002752,
+          "name": "Ahynada",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.803548,
+          "ly": 2.097692
+        },
+        {
+          "id": 30001371,
+          "name": "Erenta",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.634758,
+          "ly": 2.104927
+        },
+        {
+          "id": 30041407,
+          "name": "Ichinumi",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.878246,
+          "ly": 2.112554
+        },
+        {
+          "id": 30001379,
+          "name": "Tunttaras",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.885312,
+          "ly": 2.161724
+        },
+        {
+          "id": 30001380,
+          "name": "Vellaine",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.581139,
+          "ly": 2.195731
+        },
+        {
+          "id": 30000145,
+          "name": "New Caldari",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.949,
+          "ly": 2.232425
+        },
+        {
+          "id": 30002746,
+          "name": "Oijamon",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.816639,
+          "ly": 2.337235
+        },
+        {
+          "id": 30002775,
+          "name": "Paara",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.778535,
+          "ly": 2.412826
+        },
+        {
+          "id": 30001375,
+          "name": "Tsuguwa",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.769323,
+          "ly": 2.42217
+        },
+        {
+          "id": 30001415,
+          "name": "Kuoka",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.576705,
+          "ly": 2.452597
+        },
+        {
+          "id": 30000138,
+          "name": "Ikuchi",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.949,
+          "ly": 2.482268
+        },
+        {
+          "id": 30001387,
+          "name": "Isikano",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.677701,
+          "ly": 2.496509
+        },
+        {
+          "id": 30011392,
+          "name": "Jouvulen",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.889763,
+          "ly": 2.499097
+        }
+      ]
+    },
+    {
+      "id": 30003504,
+      "name": "Niarja",
+      "x": -1.8444163842959456e+17,
+      "y": 4.935241007447713e+16,
+      "z": -2.4754852925383736e+16,
+      "exits": [
+        {
+          "id": 30003503,
+          "name": "Madirmilire",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.603228,
+          "ly": 0.589709
+        },
+        {
+          "id": 30003502,
+          "name": "Bahromab",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.569426,
+          "ly": 1.16149
+        },
+        {
+          "id": 30002654,
+          "name": "Schoorasana",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.4481,
+          "ly": 1.236101
+        },
+        {
+          "id": 30003506,
+          "name": "Saana",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.552729,
+          "ly": 1.265012
+        },
+        {
+          "id": 30004079,
+          "name": "Aphend",
+          "region_id": 10000052,
+          "region": "Kador",
+          "security": 0.629298,
+          "ly": 1.301835
+        },
+        {
+          "id": 30003505,
+          "name": "Fabum",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.713904,
+          "ly": 1.359444
+        },
+        {
+          "id": 30003509,
+          "name": "Gosalav",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.739668,
+          "ly": 1.424307
+        },
+        {
+          "id": 30003501,
+          "name": "Kudi",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.697856,
+          "ly": 1.63602
+        },
+        {
+          "id": 30003500,
+          "name": "Sharji",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.772703,
+          "ly": 1.745236
+        },
+        {
+          "id": 30002653,
+          "name": "Gratesier",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.435103,
+          "ly": 1.785173
+        },
+        {
+          "id": 30004078,
+          "name": "Dresi",
+          "region_id": 10000052,
+          "region": "Kador",
+          "security": 0.618912,
+          "ly": 1.830812
+        },
+        {
+          "id": 30003508,
+          "name": "Sayartchen",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.789506,
+          "ly": 1.900791
+        },
+        {
+          "id": 30004080,
+          "name": "Romi",
+          "region_id": 10000052,
+          "region": "Kador",
+          "security": 0.719438,
+          "ly": 1.906799
+        },
+        {
+          "id": 30003008,
+          "name": "Palpis",
+          "region_id": 10000036,
+          "region": "Devoid",
+          "security": 0.496165,
+          "ly": 1.963658
+        },
+        {
+          "id": 30004082,
+          "name": "Aharalel",
+          "region_id": 10000052,
+          "region": "Kador",
+          "security": 0.567123,
+          "ly": 2.114694
+        },
+        {
+          "id": 30003007,
+          "name": "Arveyil",
+          "region_id": 10000036,
+          "region": "Devoid",
+          "security": 0.525393,
+          "ly": 2.345013
+        },
+        {
+          "id": 30002704,
+          "name": "Adrallezoen",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.478932,
+          "ly": 2.499136
+        }
+      ]
+    },
+    {
+      "id": 30000192,
+      "name": "Otanuomi",
+      "x": -8.737325768440629e+16,
+      "y": 7.568972198010898e+16,
+      "z": 1.4270384820888147e+17,
+      "exits": [
+        {
+          "id": 30000191,
+          "name": "Walvalin",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.378683,
+          "ly": 0.407551
+        },
+        {
+          "id": 30000190,
+          "name": "Vasala",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.493712,
+          "ly": 0.748787
+        },
+        {
+          "id": 30000205,
+          "name": "Obe",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.346931,
+          "ly": 0.941425
+        },
+        {
+          "id": 30000189,
+          "name": "Kiainti",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.528522,
+          "ly": 0.941496
+        },
+        {
+          "id": 30000204,
+          "name": "Ohkunen",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.384887,
+          "ly": 0.995699
+        },
+        {
+          "id": 30000194,
+          "name": "Otsela",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.3844,
+          "ly": 1.09032
+        },
+        {
+          "id": 30000207,
+          "name": "Osaa",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.329199,
+          "ly": 1.278283
+        },
+        {
+          "id": 30000193,
+          "name": "Vouskiaho",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.500279,
+          "ly": 1.294089
+        },
+        {
+          "id": 30000203,
+          "name": "Eruka",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.417261,
+          "ly": 1.373204
+        },
+        {
+          "id": 30000202,
+          "name": "Mastakomon",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.456966,
+          "ly": 1.411108
+        },
+        {
+          "id": 30000201,
+          "name": "Uchoshi",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.474179,
+          "ly": 1.41195
+        },
+        {
+          "id": 30000188,
+          "name": "Hentogaira",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.566958,
+          "ly": 1.472979
+        },
+        {
+          "id": 30000177,
+          "name": "Ukkalen",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.64512,
+          "ly": 1.712723
+        },
+        {
+          "id": 30000176,
+          "name": "Keikaken",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.721319,
+          "ly": 2.096924
+        },
+        {
+          "id": 30000178,
+          "name": "Akkilen",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.689046,
+          "ly": 2.219899
+        },
+        {
+          "id": 30000170,
+          "name": "Vahunomi",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.531592,
+          "ly": 2.417496
+        },
+        {
+          "id": 30000174,
+          "name": "Onuse",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.740427,
+          "ly": 2.491487
+        }
+      ]
+    },
+    {
+      "id": 30000157,
+      "name": "Otela",
+      "x": -8.962040099390606e+16,
+      "y": 7.504890431213834e+16,
+      "z": 9.350197413897317e+16,
+      "exits": [
+        {
+          "id": 30000156,
+          "name": "Josameto",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.577656,
+          "ly": 0.589075
+        },
+        {
+          "id": 30000153,
+          "name": "Poinen",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.558053,
+          "ly": 0.987733
+        },
+        {
+          "id": 30000154,
+          "name": "Liekuri",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.600608,
+          "ly": 1.268224
+        },
+        {
+          "id": 30000152,
+          "name": "Hampinen",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.541327,
+          "ly": 1.278261
+        },
+        {
+          "id": 30000150,
+          "name": "Hurtoken",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.585978,
+          "ly": 1.351662
+        },
+        {
+          "id": 30000131,
+          "name": "Nomaa",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.606936,
+          "ly": 1.369481
+        },
+        {
+          "id": 30000155,
+          "name": "Obanen",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.561732,
+          "ly": 1.431462
+        },
+        {
+          "id": 30000146,
+          "name": "Saisio",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.65244,
+          "ly": 1.622424
+        },
+        {
+          "id": 30000159,
+          "name": "Ikami",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.532008,
+          "ly": 1.771683
+        },
+        {
+          "id": 30000147,
+          "name": "Abagawa",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.625298,
+          "ly": 1.788338
+        },
+        {
+          "id": 30000158,
+          "name": "Olo",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.676041,
+          "ly": 2.041192
+        },
+        {
+          "id": 30000126,
+          "name": "Geras",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.650146,
+          "ly": 2.09151
+        },
+        {
+          "id": 30000149,
+          "name": "Gekutami",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.699187,
+          "ly": 2.177998
+        },
+        {
+          "id": 30000160,
+          "name": "Reisen",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.518561,
+          "ly": 2.212583
+        },
+        {
+          "id": 30000173,
+          "name": "Vattuolen",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.708073,
+          "ly": 2.436453
+        },
+        {
+          "id": 30000161,
+          "name": "Purjola",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.520527,
+          "ly": 2.455281
+        },
+        {
+          "id": 30000180,
+          "name": "Osmon",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.680264,
+          "ly": 2.494745
+        }
+      ]
+    },
+    {
+      "id": 30003495,
+      "name": "Raravoss",
+      "x": -1.7069207882118816e+17,
+      "y": 4.837737672099054e+16,
+      "z": -7.421214872887456e+16,
+      "exits": [
+        {
+          "id": 30003494,
+          "name": "Ekid",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.737273,
+          "ly": 0.685567
+        },
+        {
+          "id": 30003498,
+          "name": "Sharhelund",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.573415,
+          "ly": 0.728937
+        },
+        {
+          "id": 30003497,
+          "name": "Zaimeth",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.524679,
+          "ly": 1.039384
+        },
+        {
+          "id": 30003496,
+          "name": "Nakri",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.805291,
+          "ly": 1.36549
+        },
+        {
+          "id": 30002233,
+          "name": "Dakba",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.710418,
+          "ly": 1.64605
+        },
+        {
+          "id": 30003499,
+          "name": "Mai",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.428053,
+          "ly": 1.700205
+        },
+        {
+          "id": 30002229,
+          "name": "Sitanan",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.793875,
+          "ly": 1.744667
+        },
+        {
+          "id": 30003493,
+          "name": "Youl",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.840705,
+          "ly": 1.885416
+        },
+        {
+          "id": 30002231,
+          "name": "Ardishapur Prime",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.740023,
+          "ly": 1.892847
+        },
+        {
+          "id": 30003074,
+          "name": "Sasiekko",
+          "region_id": 10000038,
+          "region": "The Bleak Lands",
+          "security": 0.542635,
+          "ly": 1.952664
+        },
+        {
+          "id": 30002235,
+          "name": "Shumam",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.67737,
+          "ly": 1.955218
+        },
+        {
+          "id": 30002232,
+          "name": "Gid",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.737569,
+          "ly": 2.112866
+        },
+        {
+          "id": 30002226,
+          "name": "Thebeka",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.873772,
+          "ly": 2.159887
+        },
+        {
+          "id": 30003492,
+          "name": "Orkashu",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.825926,
+          "ly": 2.29126
+        },
+        {
+          "id": 30003073,
+          "name": "Netsalakka",
+          "region_id": 10000038,
+          "region": "The Bleak Lands",
+          "security": 0.483956,
+          "ly": 2.338758
+        },
+        {
+          "id": 30002276,
+          "name": "Isamm",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.68324,
+          "ly": 2.348271
+        },
+        {
+          "id": 30002277,
+          "name": "Ebtesham",
+          "region_id": 10000043,
+          "region": "Domain",
+          "security": 0.716798,
+          "ly": 2.431821
+        }
+      ]
+    },
+    {
+      "id": 30010141,
+      "name": "Sakenta",
+      "x": -1.4099681681916093e+17,
+      "y": 6.3157462493689e+16,
+      "z": 1.1329580016987907e+17,
+      "exits": [
+        {
+          "id": 30000138,
+          "name": "Ikuchi",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.949,
+          "ly": 0.334253
+        },
+        {
+          "id": 30021407,
+          "name": "Aokannitoh",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.949,
+          "ly": 0.684634
+        },
+        {
+          "id": 30000143,
+          "name": "Niyabainen",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.949,
+          "ly": 0.745885
+        },
+        {
+          "id": 30000145,
+          "name": "New Caldari",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.949,
+          "ly": 0.75134
+        },
+        {
+          "id": 30000133,
+          "name": "Hirtamon",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.949,
+          "ly": 0.800646
+        },
+        {
+          "id": 30000132,
+          "name": "Ansila",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.912017,
+          "ly": 0.928973
+        },
+        {
+          "id": 30000144,
+          "name": "Perimeter",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.949,
+          "ly": 1.010463
+        },
+        {
+          "id": 30000142,
+          "name": "Jita",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.945913,
+          "ly": 1.360042
+        },
+        {
+          "id": 30001377,
+          "name": "Sarekuwa",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.936502,
+          "ly": 1.442953
+        },
+        {
+          "id": 30031407,
+          "name": "Hitanishio",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.946749,
+          "ly": 1.477124
+        },
+        {
+          "id": 30000134,
+          "name": "Hykkota",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.823653,
+          "ly": 1.590217
+        },
+        {
+          "id": 30000140,
+          "name": "Maurasi",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.912748,
+          "ly": 1.696028
+        },
+        {
+          "id": 30000139,
+          "name": "Urlen",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.949,
+          "ly": 1.709257
+        },
+        {
+          "id": 30000129,
+          "name": "Unpas",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.945965,
+          "ly": 2.044681
+        },
+        {
+          "id": 30000135,
+          "name": "Outuni",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.734172,
+          "ly": 2.059132
+        },
+        {
+          "id": 30002745,
+          "name": "Saikanen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.871223,
+          "ly": 2.170525
+        },
+        {
+          "id": 30030141,
+          "name": "Uitra",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.924096,
+          "ly": 2.184829
+        },
+        {
+          "id": 30001374,
+          "name": "Iidoken",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.843816,
+          "ly": 2.280612
+        },
+        {
+          "id": 30002642,
+          "name": "Iyen-Oursta",
+          "region_id": 10000032,
+          "region": "Sinq Laison",
+          "security": 0.779575,
+          "ly": 2.327336
+        },
+        {
+          "id": 30041407,
+          "name": "Ichinumi",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.878246,
+          "ly": 2.376967
+        },
+        {
+          "id": 30001379,
+          "name": "Tunttaras",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.885312,
+          "ly": 2.398303
+        },
+        {
+          "id": 30001410,
+          "name": "Kirras",
+          "region_id": 10000016,
+          "region": "Lonetrek",
+          "security": 0.821743,
+          "ly": 2.479348
+        },
+        {
+          "id": 30000136,
+          "name": "Ohmahailen",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.663811,
+          "ly": 2.495205
+        },
+        {
+          "id": 30002744,
+          "name": "Auviken",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.819648,
+          "ly": 2.495899
+        }
+      ]
+    },
+    {
+      "id": 30020141,
+      "name": "Senda",
+      "x": -1.2523192021534938e+17,
+      "y": 7.193531188877919e+16,
+      "z": 9.257317153454832e+16,
+      "exits": [
+        {
+          "id": 30000130,
+          "name": "Shihuken",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.874585,
+          "ly": 0.448447
+        },
+        {
+          "id": 30003383,
+          "name": "Todrir",
+          "region_id": 10000042,
+          "region": "Metropolis",
+          "security": 0.949,
+          "ly": 0.85051
+        },
+        {
+          "id": 30030141,
+          "name": "Uitra",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.924096,
+          "ly": 1.044567
+        },
+        {
+          "id": 30000129,
+          "name": "Unpas",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.945965,
+          "ly": 1.045043
+        },
+        {
+          "id": 30000127,
+          "name": "Sirseshin",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.747993,
+          "ly": 1.139368
+        },
+        {
+          "id": 30000141,
+          "name": "Kisogo",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.949,
+          "ly": 1.291125
+        },
+        {
+          "id": 30002791,
+          "name": "Sirppala",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.883227,
+          "ly": 1.603647
+        },
+        {
+          "id": 30000139,
+          "name": "Urlen",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.949,
+          "ly": 1.666586
+        },
+        {
+          "id": 30002788,
+          "name": "Inaro",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.836978,
+          "ly": 1.675074
+        },
+        {
+          "id": 30000128,
+          "name": "Tuuriainas",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.610849,
+          "ly": 1.765354
+        },
+        {
+          "id": 30000126,
+          "name": "Geras",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.650146,
+          "ly": 1.788573
+        },
+        {
+          "id": 30002790,
+          "name": "Waskisen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.685588,
+          "ly": 2.049438
+        },
+        {
+          "id": 30000140,
+          "name": "Maurasi",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.912748,
+          "ly": 2.328237
+        },
+        {
+          "id": 30021407,
+          "name": "Aokannitoh",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.949,
+          "ly": 2.359592
+        },
+        {
+          "id": 30002789,
+          "name": "Kaaputenen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.779169,
+          "ly": 2.361902
+        },
+        {
+          "id": 30000144,
+          "name": "Perimeter",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.949,
+          "ly": 2.384818
+        },
+        {
+          "id": 30002802,
+          "name": "Kusomonmon",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.8473,
+          "ly": 2.427123
+        },
+        {
+          "id": 30000131,
+          "name": "Nomaa",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.606936,
+          "ly": 2.428973
+        },
+        {
+          "id": 30002785,
+          "name": "Santola",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.829998,
+          "ly": 2.455918
+        },
+        {
+          "id": 30000133,
+          "name": "Hirtamon",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.949,
+          "ly": 2.464209
+        }
+      ]
+    },
+    {
+      "id": 30002411,
+      "name": "Skarkon",
+      "x": -6532782451210522.0,
+      "y": -4522598544370158.0,
+      "z": 8867131308331356.0,
+      "exits": [
+        {
+          "id": 30002412,
+          "name": "Ennur",
+          "region_id": 10000028,
+          "region": "Molden Heath",
+          "security": 0.058349,
+          "ly": 0.534047
+        },
+        {
+          "id": 30002410,
+          "name": "Mimiror",
+          "region_id": 10000028,
+          "region": "Molden Heath",
+          "security": 0.204493,
+          "ly": 1.034205
+        },
+        {
+          "id": 30002409,
+          "name": "Osvetur",
+          "region_id": 10000028,
+          "region": "Molden Heath",
+          "security": 0.24758,
+          "ly": 1.471618
+        },
+        {
+          "id": 30002408,
+          "name": "Fegomenko",
+          "region_id": 10000028,
+          "region": "Molden Heath",
+          "security": 0.504199,
+          "ly": 1.778904
+        },
+        {
+          "id": 30002413,
+          "name": "Unertek",
+          "region_id": 10000028,
+          "region": "Molden Heath",
+          "security": 0.304135,
+          "ly": 2.054759
+        }
+      ]
+    },
+    {
+      "id": 30002770,
+      "name": "Tunudan",
+      "x": -1.7426905718991302e+17,
+      "y": 7.787990084264011e+16,
+      "z": 9.080946313705715e+16,
+      "exits": [
+        {
+          "id": 30002769,
+          "name": "Enderailen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.448785,
+          "ly": 0.536707
+        },
+        {
+          "id": 30002771,
+          "name": "Kulelen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.475369,
+          "ly": 0.739331
+        },
+        {
+          "id": 30002767,
+          "name": "Kubinen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.416024,
+          "ly": 1.010717
+        },
+        {
+          "id": 30002794,
+          "name": "Yria",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.50122,
+          "ly": 1.36055
+        },
+        {
+          "id": 30002772,
+          "name": "Rairomon",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.62936,
+          "ly": 1.474808
+        },
+        {
+          "id": 30002768,
+          "name": "Uedama",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.50544,
+          "ly": 1.495619
+        },
+        {
+          "id": 30002795,
+          "name": "Oshaima",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.453128,
+          "ly": 1.497862
+        },
+        {
+          "id": 30002799,
+          "name": "Oisio",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.533575,
+          "ly": 1.565592
+        },
+        {
+          "id": 30002796,
+          "name": "Hysera",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.397183,
+          "ly": 1.68739
+        },
+        {
+          "id": 30002798,
+          "name": "Venilen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.611822,
+          "ly": 1.982916
+        },
+        {
+          "id": 30002773,
+          "name": "Hogimo",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.557445,
+          "ly": 2.007218
+        },
+        {
+          "id": 30002774,
+          "name": "Huttaken",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.572713,
+          "ly": 2.024241
+        },
+        {
+          "id": 30002808,
+          "name": "Oto",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.39809,
+          "ly": 2.041451
+        },
+        {
+          "id": 30002800,
+          "name": "Haatomo",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.609266,
+          "ly": 2.12862
+        },
+        {
+          "id": 30002806,
+          "name": "Hasmijaala",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.335829,
+          "ly": 2.152507
+        },
+        {
+          "id": 30002807,
+          "name": "Nagamanen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.304726,
+          "ly": 2.379731
+        }
+      ]
+    },
+    {
+      "id": 30040141,
+      "name": "Urhinichi",
+      "x": -1.3855093414875616e+17,
+      "y": 7.807759206338592e+16,
+      "z": 8.319398748021826e+16,
+      "exits": [
+        {
+          "id": 30002788,
+          "name": "Inaro",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.836978,
+          "ly": 0.308733
+        },
+        {
+          "id": 30002791,
+          "name": "Sirppala",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.883227,
+          "ly": 0.334253
+        },
+        {
+          "id": 30002805,
+          "name": "Anttiri",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.712756,
+          "ly": 0.716661
+        },
+        {
+          "id": 30002790,
+          "name": "Waskisen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.685588,
+          "ly": 1.113367
+        },
+        {
+          "id": 30002802,
+          "name": "Kusomonmon",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.8473,
+          "ly": 1.12977
+        },
+        {
+          "id": 30003383,
+          "name": "Todrir",
+          "region_id": 10000042,
+          "region": "Metropolis",
+          "security": 0.949,
+          "ly": 1.189034
+        },
+        {
+          "id": 30000141,
+          "name": "Kisogo",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.949,
+          "ly": 1.314843
+        },
+        {
+          "id": 30002804,
+          "name": "Isikesu",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.670042,
+          "ly": 1.34995
+        },
+        {
+          "id": 30002803,
+          "name": "Juunigaishi",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.621322,
+          "ly": 1.513131
+        },
+        {
+          "id": 30002789,
+          "name": "Kaaputenen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.779169,
+          "ly": 1.521855
+        },
+        {
+          "id": 30002786,
+          "name": "Ikao",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.602213,
+          "ly": 1.527264
+        },
+        {
+          "id": 30002801,
+          "name": "Suroken",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.729161,
+          "ly": 1.565839
+        },
+        {
+          "id": 30002782,
+          "name": "Kamio",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.741149,
+          "ly": 1.678449
+        },
+        {
+          "id": 30000127,
+          "name": "Sirseshin",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.747993,
+          "ly": 1.73867
+        },
+        {
+          "id": 30000139,
+          "name": "Urlen",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.949,
+          "ly": 1.863815
+        },
+        {
+          "id": 30002793,
+          "name": "Inari",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.462497,
+          "ly": 2.136789
+        },
+        {
+          "id": 30002792,
+          "name": "Irjunen",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.520267,
+          "ly": 2.240006
+        },
+        {
+          "id": 30000130,
+          "name": "Shihuken",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.874585,
+          "ly": 2.260307
+        },
+        {
+          "id": 30000129,
+          "name": "Unpas",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.945965,
+          "ly": 2.366334
+        },
+        {
+          "id": 30002800,
+          "name": "Haatomo",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.609266,
+          "ly": 2.476865
+        }
+      ]
+    },
+    {
+      "id": 30005029,
+      "name": "Vale",
+      "x": -2.2171633498490208e+17,
+      "y": 3.933328023999943e+16,
+      "z": 4.932776044306055e+16,
+      "exits": [
+        {
+          "id": 30005026,
+          "name": "Cat",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.677354,
+          "ly": 0.665587
+        },
+        {
+          "id": 30005027,
+          "name": "Ommare",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.726706,
+          "ly": 0.845467
+        },
+        {
+          "id": 30005331,
+          "name": "Chantrousse",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.639317,
+          "ly": 1.010277
+        },
+        {
+          "id": 30004993,
+          "name": "Villore",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.9,
+          "ly": 1.069402
+        },
+        {
+          "id": 30005028,
+          "name": "Andole",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.753389,
+          "ly": 1.08688
+        },
+        {
+          "id": 30005025,
+          "name": "Derririntel",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.818801,
+          "ly": 1.137764
+        },
+        {
+          "id": 30005334,
+          "name": "Tierijev",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.83797,
+          "ly": 1.32246
+        },
+        {
+          "id": 30005332,
+          "name": "Osmomonne",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.768066,
+          "ly": 1.362325
+        },
+        {
+          "id": 30024971,
+          "name": "Hecarrin",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.827598,
+          "ly": 1.471092
+        },
+        {
+          "id": 30004978,
+          "name": "Pemene",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.450192,
+          "ly": 1.708504
+        },
+        {
+          "id": 30005024,
+          "name": "Atlangeins",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.880487,
+          "ly": 1.754501
+        },
+        {
+          "id": 30005330,
+          "name": "Arraron",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.471987,
+          "ly": 1.755332
+        },
+        {
+          "id": 30005009,
+          "name": "Allebin",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.460556,
+          "ly": 1.905981
+        },
+        {
+          "id": 30005203,
+          "name": "Ourapheh",
+          "region_id": 10000067,
+          "region": "Genesis",
+          "security": 0.86196,
+          "ly": 1.926606
+        },
+        {
+          "id": 30005000,
+          "name": "Old Man Star",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.335687,
+          "ly": 1.948206
+        },
+        {
+          "id": 30005320,
+          "name": "Hevrice",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.418609,
+          "ly": 1.973423
+        },
+        {
+          "id": 30005333,
+          "name": "Stou",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.518818,
+          "ly": 2.00412
+        },
+        {
+          "id": 30005313,
+          "name": "Ellmay",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.861044,
+          "ly": 2.043455
+        },
+        {
+          "id": 30004995,
+          "name": "Allamotte",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.590297,
+          "ly": 2.108505
+        },
+        {
+          "id": 30005013,
+          "name": "Perckhevin",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.53179,
+          "ly": 2.144203
+        },
+        {
+          "id": 30034971,
+          "name": "Henebene",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.837329,
+          "ly": 2.148688
+        },
+        {
+          "id": 30005309,
+          "name": "Ansalle",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.620712,
+          "ly": 2.154485
+        },
+        {
+          "id": 30005297,
+          "name": "Ouelletta",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.418579,
+          "ly": 2.170244
+        },
+        {
+          "id": 30005321,
+          "name": "Jovainnon",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.298141,
+          "ly": 2.181648
+        },
+        {
+          "id": 30005296,
+          "name": "Melmaniel",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.255253,
+          "ly": 2.253006
+        },
+        {
+          "id": 30005204,
+          "name": "Yulai",
+          "region_id": 10000067,
+          "region": "Genesis",
+          "security": 0.949,
+          "ly": 2.304027
+        },
+        {
+          "id": 30005004,
+          "name": "Attyn",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.669496,
+          "ly": 2.307728
+        },
+        {
+          "id": 30005303,
+          "name": "Merolles",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.884628,
+          "ly": 2.324888
+        },
+        {
+          "id": 30005006,
+          "name": "Aere",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.609062,
+          "ly": 2.366831
+        },
+        {
+          "id": 30005311,
+          "name": "Amygnon",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.637569,
+          "ly": 2.368124
+        },
+        {
+          "id": 30004994,
+          "name": "Arant",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.604753,
+          "ly": 2.401969
+        },
+        {
+          "id": 30005012,
+          "name": "Haine",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.436471,
+          "ly": 2.415771
+        },
+        {
+          "id": 30005011,
+          "name": "Droselory",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.541253,
+          "ly": 2.419271
+        },
+        {
+          "id": 30005314,
+          "name": "Theruesse",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.879221,
+          "ly": 2.427595
+        },
+        {
+          "id": 30005312,
+          "name": "Gisleres",
+          "region_id": 10000068,
+          "region": "Verge Vendor",
+          "security": 0.761383,
+          "ly": 2.44778
+        },
+        {
+          "id": 30005016,
+          "name": "Wysalan",
+          "region_id": 10000064,
+          "region": "Essence",
+          "security": 0.822095,
+          "ly": 2.498752
+        }
+      ]
+    },
+    {
+      "id": 30000206,
+      "name": "Wirashoda",
+      "x": -1.0615117288693866e+17,
+      "y": 7.835638203399544e+16,
+      "z": 1.4137717658569528e+17,
+      "exits": [
+        {
+          "id": 30000201,
+          "name": "Uchoshi",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.474179,
+          "ly": 0.770738
+        },
+        {
+          "id": 30000193,
+          "name": "Vouskiaho",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.500279,
+          "ly": 0.927513
+        },
+        {
+          "id": 30000202,
+          "name": "Mastakomon",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.456966,
+          "ly": 1.283084
+        },
+        {
+          "id": 30000204,
+          "name": "Ohkunen",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.384887,
+          "ly": 1.445203
+        },
+        {
+          "id": 30000190,
+          "name": "Vasala",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.493712,
+          "ly": 1.653408
+        },
+        {
+          "id": 30000205,
+          "name": "Obe",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.346931,
+          "ly": 1.752259
+        },
+        {
+          "id": 30000203,
+          "name": "Eruka",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.417261,
+          "ly": 1.807835
+        },
+        {
+          "id": 30000191,
+          "name": "Walvalin",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.378683,
+          "ly": 2.012863
+        },
+        {
+          "id": 30000189,
+          "name": "Kiainti",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.528522,
+          "ly": 2.267665
+        },
+        {
+          "id": 30002751,
+          "name": "Kaimon",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.686052,
+          "ly": 2.278418
+        },
+        {
+          "id": 30000194,
+          "name": "Otsela",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.3844,
+          "ly": 2.346799
+        },
+        {
+          "id": 30000188,
+          "name": "Hentogaira",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.566958,
+          "ly": 2.363594
+        },
+        {
+          "id": 30000207,
+          "name": "Osaa",
+          "region_id": 10000002,
+          "region": "The Forge",
+          "security": 0.329199,
+          "ly": 2.370862
+        },
+        {
+          "id": 30002777,
+          "name": "Isutaka",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.834518,
+          "ly": 2.396758
+        },
+        {
+          "id": 30002778,
+          "name": "Tasabeshi",
+          "region_id": 10000033,
+          "region": "The Citadel",
+          "security": 0.830855,
+          "ly": 2.491016
+        }
+      ]
+    }
+  ]
+}
