@@ -7,9 +7,10 @@ jumps away their 2.5 LY filament exits are.
 Data
 ----
 EVE Static Data Export (SDE), Fuzzwork CSV dump:
-  mapSolarSystems.csv     - id, name, region, security, x/y/z (metres)
+  mapSolarSystems.csv     - id, name, region, constellation, security, x/y/z (metres)
   mapSolarSystemJumps.csv - stargate graph (one row per directed edge)
   mapRegions.csv          - region names
+  mapConstellations.csv   - constellation names (Pochven: Krai Perun/Svarog/Veles)
 
 Math
 ----
@@ -87,8 +88,13 @@ TRANSIT_EXCLUDED_REGIONS = frozenset(
     {POCHVEN_REGION_ID, EXORDIUM_REGION_ID, *JOVE_REGION_IDS}
 )
 
-SDE_FILES = ("mapSolarSystems.csv", "mapSolarSystemJumps.csv", "mapRegions.csv")
-CACHE_SCHEMA = 1
+SDE_FILES = (
+    "mapSolarSystems.csv",
+    "mapSolarSystemJumps.csv",
+    "mapRegions.csv",
+    "mapConstellations.csv",
+)
+CACHE_SCHEMA = 2
 USER_AGENT = "pochven-filaments/1.0 (+local EVE tool)"
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -151,7 +157,7 @@ def fmt_int(value: int) -> str:
 # --------------------------------------------------------------------------
 
 def load_systems(sde_dir: Path) -> dict[int, dict]:
-    """solarSystemID -> {id, name, region_id, security, x, y, z}."""
+    """solarSystemID -> {id, name, region_id, constellation_id, security, x, y, z}."""
     rows = read_csv_rows(sde_dir / "mapSolarSystems.csv")
     systems: dict[int, dict] = {}
     for row in rows:
@@ -161,6 +167,7 @@ def load_systems(sde_dir: Path) -> dict[int, dict]:
                 "id": sid,
                 "name": row["solarSystemName"],
                 "region_id": int(row["regionID"]),
+                "constellation_id": int(row["constellationID"]),
                 "security": float(row["security"]),
                 "x": float(row["x"]),
                 "y": float(row["y"]),
@@ -186,6 +193,19 @@ def load_region_names(sde_dir: Path) -> dict[int, str]:
     return names
 
 
+def load_constellation_names(sde_dir: Path) -> dict[int, str]:
+    path = sde_dir / "mapConstellations.csv"
+    if not path.exists():
+        return {}
+    names: dict[int, str] = {}
+    for row in read_csv_rows(path):
+        try:
+            names[int(row["constellationID"])] = row["constellationName"]
+        except (KeyError, ValueError):
+            continue
+    return names
+
+
 def region_label(region_id: int, region_names: dict[int, str]) -> str:
     return region_names.get(region_id) or f"region {region_id}"
 
@@ -201,6 +221,12 @@ def distance_ly(a: dict, b: dict) -> float:
 def build_cache(sde_dir: Path) -> dict:
     systems = load_systems(sde_dir)
     region_names = load_region_names(sde_dir)
+    constellation_names = load_constellation_names(sde_dir)
+    if not constellation_names:
+        raise SystemExit(
+            "error: mapConstellations.csv is missing or empty.  "
+            "Run 'fetch' to download the current SDE files."
+        )
 
     pochven = sorted(
         (s for s in systems.values() if s["region_id"] == POCHVEN_REGION_ID),
@@ -241,6 +267,8 @@ def build_cache(sde_dir: Path) -> dict:
             {
                 "id": p["id"],
                 "name": p["name"],
+                "constellation_id": p["constellation_id"],
+                "constellation": constellation_names.get(p["constellation_id"], ""),
                 "x": p["x"],
                 "y": p["y"],
                 "z": p["z"],
@@ -312,10 +340,14 @@ def get_cache(path: Path, sde_dir: Path) -> dict:
             f"error: {path} is not valid JSON ({exc}).  Rebuild with 'build --force'."
         ) from None
     if cache.get("schema") != CACHE_SCHEMA:
-        raise SystemExit(
-            f"error: {path} uses schema {cache.get('schema')}, expected {CACHE_SCHEMA}.  "
-            "Rebuild with 'build --force'."
+        print(
+            f"cache schema {cache.get('schema')} is outdated; rebuilding from {sde_dir} ...",
+            file=sys.stderr,
         )
+        cache = build_cache(sde_dir)
+        write_json_atomic(path, cache)
+        _print_build_summary(cache, path)
+        return cache
     return cache
 
 
@@ -414,6 +446,7 @@ def compute_origins(
             {
                 "id": poch["id"],
                 "name": poch["name"],
+                "constellation": poch.get("constellation", ""),
                 "exits": exits,
                 "min_jumps": min(jump_counts),
                 "avg_jumps": sum(jump_counts) / len(jump_counts),
@@ -440,14 +473,16 @@ def sort_origins(origins: list[dict], mode: str) -> list[dict]:
 def render_summary(origins: list[dict]) -> list[str]:
     rank_w = len(str(len(origins)))
     name_w = max([16] + [len(o["name"]) for o in origins])
+    krai_w = max([4] + [len(o.get("constellation", "")) for o in origins])
     lines = [
-        f"  {'#':>{rank_w}}  {'Pochven origin':<{name_w}}  {'Exits':>5}  {'Min':>4}  {'Avg':>5}  {'Max':>4}",
-        f"  {'-' * rank_w}  {'-' * name_w}  {'-' * 5}  {'-' * 4}  {'-' * 5}  {'-' * 4}",
+        f"  {'#':>{rank_w}}  {'Pochven origin':<{name_w}}  {'Krai':<{krai_w}}  "
+        f"{'Exits':>5}  {'Min':>4}  {'Avg':>5}  {'Max':>4}",
+        f"  {'-' * rank_w}  {'-' * name_w}  {'-' * krai_w}  {'-' * 5}  {'-' * 4}  {'-' * 5}  {'-' * 4}",
     ]
     for i, o in enumerate(origins, 1):
         lines.append(
-            f"  {i:>{rank_w}}  {o['name']:<{name_w}}  {len(o['exits']):>5}  "
-            f"{o['min_jumps']:>4}  {o['avg_jumps']:>5.1f}  {o['max_jumps']:>4}"
+            f"  {i:>{rank_w}}  {o['name']:<{name_w}}  {o.get('constellation', ''):<{krai_w}}  "
+            f"{len(o['exits']):>5}  {o['min_jumps']:>4}  {o['avg_jumps']:>5.1f}  {o['max_jumps']:>4}"
         )
     return lines
 
@@ -457,8 +492,9 @@ def render_details(origins: list[dict]) -> list[str]:
     region_w = max([12] + [len(e["region"]) for o in origins for e in o["exits"]])
     lines: list[str] = []
     for rank, o in enumerate(origins, 1):
+        krai = f" ({o['constellation']})" if o.get("constellation") else ""
         header = (
-            f"#{rank}  {o['name']}  -  {len(o['exits'])} exits, "
+            f"#{rank}  {o['name']}{krai}  -  {len(o['exits'])} exits, "
             f"{o['min_jumps']}-{o['max_jumps']} jumps (avg {o['avg_jumps']:.1f})"
         )
         lines.append(header)
@@ -625,6 +661,7 @@ def cmd_route(args: argparse.Namespace) -> int:
                 {
                     "name": o["name"],
                     "id": o["id"],
+                    "constellation": o.get("constellation", ""),
                     "min_jumps": o["min_jumps"],
                     "avg_jumps": round(o["avg_jumps"], 3),
                     "max_jumps": o["max_jumps"],
@@ -728,6 +765,13 @@ def cmd_verify(args: argparse.Namespace) -> int:
             "Jita->Ikuchi should be 1 gate"
         )
 
+    def check_krais() -> None:
+        expected = {"Krai Perun", "Krai Svarog", "Krai Veles"}
+        found = {p.get("constellation", "") for p in pochven}
+        assert found == expected, f"Pochven constellations are {sorted(found)}, expected {sorted(expected)}"
+        for p in pochven:
+            assert len(p["exits"]) > 0
+
     check(f"Pochven system count is 27", check_pochven_count)
     check("system names and exit lists are unique", check_unique)
     check("cached counts match recomputed counts", check_counts)
@@ -736,6 +780,7 @@ def cmd_verify(args: argparse.Namespace) -> int:
     check("every Pochven system has an exit within 1 LY", check_nearest)
     check("known pair Sakenta->Ikuchi is ~0.334 LY", check_known_distance)
     check("every exit is gate-reachable (BFS from Jita)", check_graph)
+    check("Pochven systems cover the three krais", check_krais)
 
     for ok, label in checks:
         print(f"{'PASS' if ok else 'FAIL'}  {label}")

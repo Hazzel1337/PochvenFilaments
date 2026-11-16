@@ -34,19 +34,37 @@
 <main>
   <section class="toolbar" id="toolbar" hidden>
     <div class="tabs" role="tablist" aria-label="View">
-      <button type="button" role="tab" data-view="origins" class="active" aria-selected="true">Origins</button>
-      <button type="button" role="tab" data-view="exits" aria-selected="false">All exits</button>
+      <button type="button" role="tab" data-view="exits" class="active" aria-selected="true">2.5 LY exits</button>
+      <button type="button" role="tab" data-view="origins" aria-selected="false">Origins ranked</button>
     </div>
-    <input id="filter" type="search" placeholder="Filter by system name&hellip;" aria-label="Filter">
+    <input id="filter" type="search" placeholder="Filter by system, origin or krai&hellip;" aria-label="Filter">
     <span id="count" class="count"></span>
   </section>
 
-  <section id="origins-panel" class="panel">
+  <section id="exits-panel" class="panel">
+    <table id="exits-table">
+      <thead>
+        <tr>
+          <th data-sort="jumps" class="num">Jumps</th>
+          <th data-sort="name">Exit system</th>
+          <th data-sort="security" class="num">Sec</th>
+          <th data-sort="region">Region</th>
+          <th data-sort="ly" class="num" title="Distance to the nearest linked Pochven system">LY</th>
+          <th data-sort="origin" title="Nearest Pochven system whose filament can reach this exit">Pochven origin</th>
+          <th data-sort="krai" title="Pochven constellation of that origin">Pochven krai</th>
+        </tr>
+      </thead>
+      <tbody id="exits-body"></tbody>
+    </table>
+  </section>
+
+  <section id="origins-panel" class="panel" hidden>
     <table id="origins-table">
       <thead>
         <tr>
           <th class="rank">#</th>
           <th data-sort="name">Pochven origin</th>
+          <th data-sort="constellation">Krai</th>
           <th data-sort="exit_count" class="num">Exits</th>
           <th data-sort="min_jumps" class="num">Min</th>
           <th data-sort="avg_jumps" class="num">Avg</th>
@@ -57,28 +75,12 @@
     </table>
   </section>
 
-  <section id="exits-panel" class="panel" hidden>
-    <table id="exits-table">
-      <thead>
-        <tr>
-          <th data-sort="origin">Pochven origin</th>
-          <th data-sort="name">Exit system</th>
-          <th data-sort="region">Region</th>
-          <th data-sort="security" class="num">Sec</th>
-          <th data-sort="ly" class="num">LY</th>
-          <th data-sort="jumps" class="num">Jumps</th>
-        </tr>
-      </thead>
-      <tbody id="exits-body"></tbody>
-    </table>
-  </section>
-
   <p id="empty" class="empty" hidden>No rows match.</p>
 </main>
 
 <footer>
   <span id="provenance"></span>
-  <span>Click a column to sort; click a Pochven row to see its exits.</span>
+  <span>Click a column to sort &middot; click a row with <span class="more">+N</span> to see its linked origins.</span>
 </footer>
 
 <script src="/app.js"></script>

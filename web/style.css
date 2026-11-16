@@ -177,8 +177,33 @@ tr.origin { cursor: pointer; }
 tr.origin:hover td { background: #162231; }
 tr.origin.open td { background: #162231; }
 
+tr.exit:hover td { background: #141d29; }
+tr.exit.linkable { cursor: pointer; }
+tr.exit.linkable:hover td { background: #162231; }
+
 tr.origin td.name { font-weight: 600; }
 tr.origin .caret { display: inline-block; width: 1rem; color: var(--muted); }
+
+.krai { color: var(--muted); }
+
+.more {
+  display: inline-block;
+  margin-left: .45rem;
+  padding: .02rem .4rem;
+  border: 1px solid #24425c;
+  border-radius: 999px;
+  background: #142233;
+  color: var(--accent);
+  font-size: .68rem;
+  font-weight: 600;
+  vertical-align: 1px;
+}
+
+.detail-title {
+  color: var(--muted);
+  font-size: .78rem;
+  margin: .2rem 0 .45rem;
+}
 
 tr.detail > td {
   padding: 0;

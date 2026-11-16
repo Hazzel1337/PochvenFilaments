@@ -4,12 +4,13 @@ const $ = (sel) => document.querySelector(sel);
 
 const state = {
   data: null,
-  view: "origins",
+  view: "exits",
   filter: "",
   sort: { key: "min_jumps", dir: 1 },
   exitSort: { key: "jumps", dir: 1 },
   detailSort: { key: "jumps", dir: 1 },
   open: new Set(),
+  openExits: new Set(),
   busy: false,
 };
 
@@ -63,15 +64,90 @@ function markSort(table, sort, prop) {
   });
 }
 
-/* ---------- rendering ---------- */
+/* ---------- data shaping ---------- */
 
-function visibleOrigins() {
-  const needle = state.filter.trim().toLowerCase();
-  const rows = state.data.origins.filter((o) => !needle || o.name.toLowerCase().includes(needle));
-  return sortRows(rows, state.sort.key, state.sort.dir);
+// One row per 2.5 LY exit system, with every Pochven origin that can reach it.
+function exitGroups() {
+  const map = new Map();
+  for (const origin of state.data.origins) {
+    for (const exit of origin.exits) {
+      let group = map.get(exit.id);
+      if (!group) {
+        group = {
+          id: exit.id,
+          name: exit.name,
+          region: exit.region,
+          security: exit.security,
+          jumps: exit.jumps,
+          links: [],
+        };
+        map.set(exit.id, group);
+      }
+      group.links.push({
+        origin: origin.name,
+        constellation: origin.constellation || "",
+        ly: exit.ly,
+      });
+    }
+  }
+  const groups = [...map.values()];
+  for (const group of groups) {
+    group.links.sort((a, b) => a.ly - b.ly);
+    group.ly = group.links[0].ly;
+    group.origin = group.links[0].origin;
+    group.krai = group.links[0].constellation;
+  }
+  return groups;
 }
 
-function detailRow(origin) {
+function groupMatches(group, needle) {
+  if (!needle) return true;
+  if (group.name.toLowerCase().includes(needle)) return true;
+  if (group.region.toLowerCase().includes(needle)) return true;
+  return group.links.some(
+    (link) =>
+      link.origin.toLowerCase().includes(needle) ||
+      (link.constellation || "").toLowerCase().includes(needle)
+  );
+}
+
+/* ---------- rendering ---------- */
+
+function renderOrigins() {
+  const needle = state.filter.trim().toLowerCase();
+  const rows = state.data.origins.filter(
+    (origin) =>
+      !needle ||
+      origin.name.toLowerCase().includes(needle) ||
+      (origin.constellation || "").toLowerCase().includes(needle)
+  );
+  const origins = sortRows(rows, state.sort.key, state.sort.dir);
+  const body = $("#origins-body");
+  let html = "";
+  let exits = 0;
+  origins.forEach((origin, index) => {
+    const open = state.open.has(origin.name);
+    exits += origin.exits.length;
+    html += `
+      <tr class="origin${open ? " open" : ""}" data-origin="${esc(origin.name)}">
+        <td class="rank">${index + 1}</td>
+        <td class="name"><span class="caret">${open ? "\u25BE" : "\u25B8"}</span>${esc(origin.name)}</td>
+        <td class="krai">${esc(origin.constellation || "")}</td>
+        <td class="num">${origin.exits.length}</td>
+        <td class="num">${origin.min_jumps}</td>
+        <td class="num">${origin.avg_jumps.toFixed(1)}</td>
+        <td class="num">${origin.max_jumps}</td>
+      </tr>`;
+    if (open) html += originDetail(origin);
+  });
+  body.innerHTML = html;
+  markSort($("#origins-table"), state.sort, "sort");
+  body.querySelectorAll(".detail-wrap table").forEach((t) => markSort(t, state.detailSort, "detailSort"));
+  $("#empty").hidden = origins.length > 0;
+  return `${origins.length} origins \u00B7 ${fmtInt(exits)} exits`;
+}
+
+function originDetail(origin) {
   const exits = sortRows(origin.exits, state.detailSort.key, state.detailSort.dir);
   const head = `
     <tr>
@@ -93,75 +169,66 @@ function detailRow(origin) {
       </tr>`
     )
     .join("");
-  return `<tr class="detail"><td colspan="6"><div class="detail-wrap"><table><thead>${head}</thead><tbody>${rows}</tbody></table></div></td></tr>`;
-}
-
-function renderOrigins() {
-  const origins = visibleOrigins();
-  const body = $("#origins-body");
-  let html = "";
-  origins.forEach((origin, index) => {
-    const open = state.open.has(origin.name);
-    html += `
-      <tr class="origin${open ? " open" : ""}" data-origin="${esc(origin.name)}">
-        <td class="rank">${index + 1}</td>
-        <td class="name"><span class="caret">${open ? "\u25BE" : "\u25B8"}</span>${esc(origin.name)}</td>
-        <td class="num">${origin.exits.length}</td>
-        <td class="num">${origin.min_jumps}</td>
-        <td class="num">${origin.avg_jumps.toFixed(1)}</td>
-        <td class="num">${origin.max_jumps}</td>
-      </tr>`;
-    if (open) html += detailRow(origin);
-  });
-  body.innerHTML = html;
-  markSort($("#origins-table"), state.sort, "sort");
-  body.querySelectorAll(".detail-wrap table").forEach((t) => markSort(t, state.detailSort, "detailSort"));
-  $("#empty").hidden = !state.data || state.view !== "origins" || origins.length > 0;
-}
-
-function flatRows() {
-  const needle = state.filter.trim().toLowerCase();
-  const rows = [];
-  for (const origin of state.data.origins) {
-    for (const exit of origin.exits) {
-      if (needle && !origin.name.toLowerCase().includes(needle) && !exit.name.toLowerCase().includes(needle)) {
-        continue;
-      }
-      rows.push({ origin: origin.name, ...exit });
-    }
-  }
-  return sortRows(rows, state.exitSort.key, state.exitSort.dir);
+  return `<tr class="detail"><td colspan="7"><div class="detail-wrap"><table><thead>${head}</thead><tbody>${rows}</tbody></table></div></td></tr>`;
 }
 
 function renderExits() {
-  const rows = flatRows();
-  $("#exits-body").innerHTML = rows
+  const needle = state.filter.trim().toLowerCase();
+  const groups = sortRows(
+    exitGroups().filter((group) => groupMatches(group, needle)),
+    state.exitSort.key,
+    state.exitSort.dir
+  );
+  const body = $("#exits-body");
+  let links = 0;
+  let html = "";
+  for (const group of groups) {
+    links += group.links.length;
+    const open = state.openExits.has(group.name);
+    const linkable = group.links.length > 1;
+    html += `
+      <tr class="exit${linkable ? " linkable" : ""}" data-exit="${esc(group.name)}">
+        <td class="num">${group.jumps}</td>
+        <td>${esc(group.name)}${group.jumps === 0 ? '<span class="badge">target</span>' : ""}</td>
+        <td class="num sec ${secClass(group.security)}">${fmtSec(group.security)}</td>
+        <td>${esc(group.region)}</td>
+        <td class="num">${group.ly.toFixed(3)}</td>
+        <td>${esc(group.origin)}${linkable ? `<span class="more">+${group.links.length - 1}</span>` : ""}</td>
+        <td class="krai">${esc(group.krai)}</td>
+      </tr>`;
+    if (open && linkable) html += exitDetail(group);
+  }
+  body.innerHTML = html;
+  markSort($("#exits-table"), state.exitSort, "sort");
+  $("#empty").hidden = groups.length > 0;
+  return `${fmtInt(groups.length)} exit systems \u00B7 ${fmtInt(links)} origin links`;
+}
+
+function exitDetail(group) {
+  const rows = group.links
     .map(
-      (e) => `
+      (link) => `
       <tr>
-        <td>${esc(e.origin)}</td>
-        <td>${esc(e.name)}${e.jumps === 0 ? '<span class="badge">target</span>' : ""}</td>
-        <td>${esc(e.region)}</td>
-        <td class="num sec ${secClass(e.security)}">${fmtSec(e.security)}</td>
-        <td class="num">${e.ly.toFixed(3)}</td>
-        <td class="num">${e.jumps}</td>
+        <td>${esc(link.origin)}</td>
+        <td class="krai">${esc(link.constellation)}</td>
+        <td class="num">${link.ly.toFixed(3)}</td>
       </tr>`
     )
     .join("");
-  markSort($("#exits-table"), state.exitSort, "sort");
-  $("#empty").hidden = !state.data || state.view !== "exits" || rows.length > 0;
+  return `
+    <tr class="detail"><td colspan="7"><div class="detail-wrap">
+      <div class="detail-title">${esc(group.name)} is within 2.5 LY of these Pochven systems</div>
+      <table>
+        <thead><tr><th>Pochven origin</th><th>Krai</th><th class="num">LY from origin</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div></td></tr>`;
 }
 
 function render() {
   if (!state.data) return;
   $("#toolbar").hidden = false;
-  if (state.view === "origins") {
-    renderOrigins();
-  } else {
-    renderExits();
-  }
-  const meta = state.data.meta;
-  $("#count").textContent = `${state.data.origins.length} origins \u00B7 ${fmtInt(meta.exit_pairs)} exits`;
+  $("#count").textContent = state.view === "exits" ? renderExits() : renderOrigins();
 }
 
 /* ---------- status ---------- */
@@ -190,7 +257,10 @@ async function load(target, minSec) {
 
     state.data = body;
     state.open.clear();
-    if (body.origins.length) state.open.add(body.origins[0].name);
+    state.openExits.clear();
+    if (state.view === "origins" && body.origins.length) state.open.add(body.origins[0].name);
+    const pinned = new URLSearchParams(location.search).get("open");
+    if (pinned) state.openExits.add(pinned);
     render();
 
     const t = body.target;
@@ -207,7 +277,7 @@ async function load(target, minSec) {
     else url.searchParams.delete("min_sec");
     history.replaceState(null, "", url);
 
-    $("#provenance").textContent = `SDE cache ${body.meta.generated_utc.replace("T", " ").replace("Z", " UTC")} \u00B7 ranges computed from star coordinates`;
+    $("#provenance").textContent = `SDE cache ${body.meta.generated_utc.replace("T", " ").replace("Z", " UTC")} \u00B7 krai = Pochven constellation`;
   } catch (err) {
     const message = err && err.error ? err.error : "request failed";
     const suggestions = err && err.suggestions && err.suggestions.length ? ` Did you mean: ${err.suggestions.join(", ")}?` : "";
@@ -243,10 +313,10 @@ function switchView(view) {
     tab.classList.toggle("active", active);
     tab.setAttribute("aria-selected", String(active));
   });
-  $("#origins-panel").hidden = view !== "origins";
   $("#exits-panel").hidden = view !== "exits";
+  $("#origins-panel").hidden = view !== "origins";
   const url = new URL(location.href);
-  if (view === "exits") url.searchParams.set("view", "exits");
+  if (view === "origins") url.searchParams.set("view", "origins");
   else url.searchParams.delete("view");
   history.replaceState(null, "", url);
   render();
@@ -287,12 +357,20 @@ function init() {
       return render();
     }
 
-    const row = event.target.closest("tr.origin");
-    if (row) {
-      const name = row.dataset.origin;
+    const exitRow = event.target.closest("tr.exit.linkable");
+    if (exitRow) {
+      const name = exitRow.dataset.exit;
+      if (state.openExits.has(name)) state.openExits.delete(name);
+      else state.openExits.add(name);
+      return render();
+    }
+
+    const originRow = event.target.closest("tr.origin");
+    if (originRow) {
+      const name = originRow.dataset.origin;
       if (state.open.has(name)) state.open.delete(name);
       else state.open.add(name);
-      renderOrigins();
+      return render();
     }
   });
 
@@ -303,7 +381,7 @@ function init() {
   const minSec = params.get("min_sec") || "";
   $("#target").value = target;
   $("#min-sec").value = minSec;
-  if (params.get("view") === "exits") switchView("exits");
+  if (params.get("view") === "origins") switchView("origins");
   load(target, minSec);
 }
 

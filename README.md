@@ -72,8 +72,10 @@ Sakenta can drop you **directly in Jita**, 1.36 LY away — the well-known
    ```
 
    using the exact 1 LY = 9,460,730,472,580,800 m constant.
-4. Keep pairs with `d_ly <= 2.5` and store name, region, security and exact
-   distance in `pochven_exits.json`.
+4. Keep pairs with `d_ly <= 2.5` and store name, region, security, exact
+   distance and the origin's Pochven krai (constellation, from
+   `mapConstellations.csv`: Krai Perun, Krai Svarog, Krai Veles) in
+   `pochven_exits.json`.
 
 The current Fuzzwork dump yields **27 origins, 389 unique exit systems and 556
 origin→exit pairs**.
@@ -150,14 +152,17 @@ or double-click `web-ui.cmd`. The server is stdlib-only; `--port`, `--host`,
 `--no-browser` and `--verbose` are available.
 
 - **Target box** with autocomplete over every K-space system.
-- **Sortable tables** — click any header in the origin ranking, the exit detail
-  table, or the flat "All exits" view. Click again to reverse.
-- **Origins / All exits** tabs: grouped ranking, or all 556 origin→exit pairs in
-  one flat table.
-- **Filter** box matches system names in either view.
+- **"2.5 LY exits" (default view)** — one row per exit system, sorted by gate
+  jumps to your target, with columns: jumps, exit system, security, K-space
+  region, LY to the nearest origin, Pochven origin, Pochven krai. A `+N` chip
+  means the system is in range of N additional origins; click the row to list
+  every linked origin with its krai and exact LY distance.
+- **"Origins ranked"** — the CLI-style ranking, with the krai as a column.
+- **Sortable tables** — click any header in either view; click again to reverse.
+- **Filter** box matches system, origin and krai names.
 - **Min exit sec** re-ranks server-side, using the same filter as `--min-sec`.
-- Target, filter value and active tab are written to the URL, so the view is
-  shareable/bookmarkable.
+- Target, min-sec, active tab and a pinned `open=` system are written to the
+  URL, so the view is shareable/bookmarkable.
 - Distances and jump counts are computed live from the same cache and gate
   graph as the CLI; the server caches each target's BFS result in memory.
 
@@ -176,7 +181,8 @@ PASS  no wormhole / Jove / Zarzakh / Exordium exits
 PASS  every Pochven system has an exit within 1 LY
 PASS  known pair Sakenta->Ikuchi is ~0.334 LY
 PASS  every exit is gate-reachable (BFS from Jita)
-8/8 checks passed; 27 Pochven systems, 389 exit systems, 556 exit pairs
+PASS  Pochven systems cover the three krais
+9/9 checks passed; 27 Pochven systems, 389 exit systems, 556 exit pairs
 ```
 
 Unit tests: `python -m unittest -v test_pochven_filaments.py`.

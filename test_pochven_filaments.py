@@ -104,6 +104,13 @@ class TestRealData(unittest.TestCase):
             for e in p["exits"]:
                 self.assertNotEqual(e["name"], "Zarzakh")
 
+    def test_krais(self):
+        krais = {p["constellation"] for p in self.cache["pochven_systems"]}
+        self.assertEqual(krais, {"Krai Perun", "Krai Svarog", "Krai Veles"})
+        self.assertEqual(self.by_name["Sakenta"]["constellation"], "Krai Perun")
+        self.assertEqual(self.by_name["Niarja"]["constellation"], "Krai Svarog")
+        self.assertEqual(self.by_name["Senda"]["constellation"], "Krai Veles")
+
     def test_jita_ranking_prefers_sakenta(self):
         systems = pf.load_systems(SDE_DIR)
         adj = pf.build_graph(SDE_DIR, systems)
@@ -145,6 +152,7 @@ class TestWebApi(unittest.TestCase):
         self.assertEqual(result["meta"]["exit_pairs"], 556)
         first = result["origins"][0]
         self.assertEqual(first["name"], "Sakenta")
+        self.assertEqual(first["constellation"], "Krai Perun")
         self.assertEqual(first["min_jumps"], 0)
         self.assertEqual(first["exits"][0]["name"], "Jita")
 
