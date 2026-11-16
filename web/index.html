@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pochven filament router</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="top">
+  <h1>Pochven filament router</h1>
+  <p class="lede">
+    Where to fire a <strong>Proximity&nbsp;5/15 'Extraction'</strong> filament (2.5&nbsp;LY range),
+    and how many stargate jumps the exits leave you from your target.
+  </p>
+
+  <form id="route-form" autocomplete="off">
+    <label class="field">
+      <span>Target system</span>
+      <input id="target" list="system-list" placeholder="Jita" spellcheck="false" required>
+      <datalist id="system-list"></datalist>
+    </label>
+    <label class="field narrow">
+      <span>Min exit sec</span>
+      <input id="min-sec" type="number" step="0.05" min="-1" max="1" placeholder="any">
+    </label>
+    <button type="submit" id="go">Route</button>
+  </form>
+
+  <p id="status" class="status" role="status" aria-live="polite"></p>
+</header>
+
+<main>
+  <section class="toolbar" id="toolbar" hidden>
+    <div class="tabs" role="tablist" aria-label="View">
+      <button type="button" role="tab" data-view="origins" class="active" aria-selected="true">Origins</button>
+      <button type="button" role="tab" data-view="exits" aria-selected="false">All exits</button>
+    </div>
+    <input id="filter" type="search" placeholder="Filter by system name&hellip;" aria-label="Filter">
+    <span id="count" class="count"></span>
+  </section>
+
+  <section id="origins-panel" class="panel">
+    <table id="origins-table">
+      <thead>
+        <tr>
+          <th class="rank">#</th>
+          <th data-sort="name">Pochven origin</th>
+          <th data-sort="exit_count" class="num">Exits</th>
+          <th data-sort="min_jumps" class="num">Min</th>
+          <th data-sort="avg_jumps" class="num">Avg</th>
+          <th data-sort="max_jumps" class="num">Max</th>
+        </tr>
+      </thead>
+      <tbody id="origins-body"></tbody>
+    </table>
+  </section>
+
+  <section id="exits-panel" class="panel" hidden>
+    <table id="exits-table">
+      <thead>
+        <tr>
+          <th data-sort="origin">Pochven origin</th>
+          <th data-sort="name">Exit system</th>
+          <th data-sort="region">Region</th>
+          <th data-sort="security" class="num">Sec</th>
+          <th data-sort="ly" class="num">LY</th>
+          <th data-sort="jumps" class="num">Jumps</th>
+        </tr>
+      </thead>
+      <tbody id="exits-body"></tbody>
+    </table>
+  </section>
+
+  <p id="empty" class="empty" hidden>No rows match.</p>
+</main>
+
+<footer>
+  <span id="provenance"></span>
+  <span>Click a column to sort; click a Pochven row to see its exits.</span>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>

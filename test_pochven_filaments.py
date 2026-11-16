@@ -129,5 +129,49 @@ class TestRealData(unittest.TestCase):
                 self.assertGreaterEqual(e["security"], 0.45)
 
 
+@unittest.skipUnless((SDE_DIR / "mapSolarSystems.csv").exists(), "SDE not downloaded")
+class TestWebApi(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        import web
+
+        cls.web = web
+        cls.app = web.App(SDE_DIR, HERE / "pochven_exits.json")
+
+    def test_route_payload(self):
+        result = self.app.route("Jita", None)
+        self.assertEqual(result["target"]["name"], "Jita")
+        self.assertEqual(len(result["origins"]), 27)
+        self.assertEqual(result["meta"]["exit_pairs"], 556)
+        first = result["origins"][0]
+        self.assertEqual(first["name"], "Sakenta")
+        self.assertEqual(first["min_jumps"], 0)
+        self.assertEqual(first["exits"][0]["name"], "Jita")
+
+    def test_unknown_target_is_404(self):
+        with self.assertRaises(self.web.ApiError) as ctx:
+            self.app.route("Jitaa", None)
+        self.assertEqual(ctx.exception.status, 404)
+        self.assertIn("Jita", ctx.exception.payload["suggestions"])
+
+    def test_pochven_and_wormhole_targets_rejected(self):
+        for name in ("Niarja", "Thera"):
+            with self.assertRaises(self.web.ApiError) as ctx:
+                self.app.route(name, None)
+            self.assertEqual(ctx.exception.status, 400, name)
+
+    def test_min_sec_filter(self):
+        result = self.app.route("Jita", 0.45)
+        self.assertLess(result["meta"]["exit_pairs"], 556)
+        for origin in result["origins"]:
+            for exit_system in origin["exits"]:
+                self.assertGreaterEqual(exit_system["security"], 0.45)
+
+    def test_datalist_excludes_pochven(self):
+        self.assertIn("Jita", self.app.system_names)
+        self.assertNotIn("Niarja", self.app.system_names)
+        self.assertIn("Zarzakh", self.app.system_names)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

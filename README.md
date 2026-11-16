@@ -1,6 +1,6 @@
 # Pochven filament extraction router
 
-A small, dependency-free Python CLI that answers one question:
+A small, dependency-free Python tool that answers one question:
 
 > **I want to end up at system X. Which Pochven system should I activate a
 > Proximity 'Extraction' filament in, and where is the filament likely to spit
@@ -8,6 +8,7 @@ A small, dependency-free Python CLI that answers one question:
 
 It computes the 2.5 LY filament exit set for every Pochven system from EVE's
 Static Data Export and ranks the origins by stargate jumps to your target.
+Comes with a CLI and a local web UI with sortable tables.
 
 ---
 
@@ -139,6 +140,29 @@ is shorthand for `route Jita`.
 
 ---
 
+## Web UI
+
+```powershell
+python web.py            # opens http://127.0.0.1:8770/
+```
+
+or double-click `web-ui.cmd`. The server is stdlib-only; `--port`, `--host`,
+`--no-browser` and `--verbose` are available.
+
+- **Target box** with autocomplete over every K-space system.
+- **Sortable tables** — click any header in the origin ranking, the exit detail
+  table, or the flat "All exits" view. Click again to reverse.
+- **Origins / All exits** tabs: grouped ranking, or all 556 origin→exit pairs in
+  one flat table.
+- **Filter** box matches system names in either view.
+- **Min exit sec** re-ranks server-side, using the same filter as `--min-sec`.
+- Target, filter value and active tab are written to the URL, so the view is
+  shareable/bookmarkable.
+- Distances and jump counts are computed live from the same cache and gate
+  graph as the CLI; the server caches each target's BFS result in memory.
+
+---
+
 ## Validation
 
 `verify` re-derives everything and checks it against the SDE:
@@ -187,6 +211,9 @@ of ships the filament can carry (`Maximum Ship Jump cap`), not a range.
 | File | Purpose |
 |---|---|
 | `pochven_filaments.py` | the CLI (standard library only) |
+| `web.py` | local web UI server + JSON API (standard library only) |
+| `web/` | `index.html`, `app.js`, `style.css` for the UI |
+| `web-ui.cmd` | double-click launcher for the UI |
 | `pochven_exits.json` | generated 2.5 LY cache, safe to delete |
-| `test_pochven_filaments.py` | unit tests over the math, BFS and real SDE |
+| `test_pochven_filaments.py` | unit tests over the math, BFS, SDE and web API |
 | `sde/` | downloaded CSVs (git-ignored, re-fetchable) |
