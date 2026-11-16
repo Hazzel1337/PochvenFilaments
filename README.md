@@ -10,6 +10,10 @@ It computes the 2.5 LY filament exit set for every Pochven system from EVE's
 Static Data Export and ranks the origins by stargate jumps to your target.
 Comes with a CLI and a local web UI with sortable tables.
 
+**Download:** the portable build is on the
+[Releases page](https://github.com/Hazzel1337/PochvenFilaments/releases/latest) —
+the zip includes the SDE snapshot, so it runs offline without fetching anything.
+
 ---
 
 ## Quick start
