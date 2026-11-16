@@ -111,6 +111,24 @@ class TestRealData(unittest.TestCase):
         self.assertEqual(self.by_name["Niarja"]["constellation"], "Krai Svarog")
         self.assertEqual(self.by_name["Senda"]["constellation"], "Krai Veles")
 
+    def test_system_classes(self):
+        classes = {p["name"]: p["system_class"] for p in self.cache["pochven_systems"]}
+        self.assertEqual(classes["Sakenta"], "Border")
+        self.assertEqual(classes["Urhinichi"], "Border")
+        self.assertEqual(classes["Niarja"], "Home")
+        self.assertEqual(classes["Kino"], "Home")
+        self.assertEqual(classes["Archee"], "Home")
+        self.assertEqual(classes["Komo"], "Internal")
+        self.assertEqual(sum(1 for v in classes.values() if v == "Border"), 6)
+        self.assertEqual(sum(1 for v in classes.values() if v == "Home"), 3)
+        self.assertEqual(sum(1 for v in classes.values() if v == "Internal"), 18)
+        for krai in ("Krai Perun", "Krai Svarog", "Krai Veles"):
+            in_krai = [p for p in self.cache["pochven_systems"] if p["constellation"] == krai]
+            self.assertEqual(len(in_krai), 9)
+            self.assertEqual(sum(1 for p in in_krai if p["system_class"] == "Border"), 2)
+            self.assertEqual(sum(1 for p in in_krai if p["system_class"] == "Home"), 1)
+            self.assertEqual(sum(1 for p in in_krai if p["system_class"] == "Internal"), 6)
+
     def test_jita_ranking_prefers_sakenta(self):
         systems = pf.load_systems(SDE_DIR)
         adj = pf.build_graph(SDE_DIR, systems)
@@ -153,6 +171,7 @@ class TestWebApi(unittest.TestCase):
         first = result["origins"][0]
         self.assertEqual(first["name"], "Sakenta")
         self.assertEqual(first["constellation"], "Krai Perun")
+        self.assertEqual(first["system_class"], "Border")
         self.assertEqual(first["min_jumps"], 0)
         self.assertEqual(first["exits"][0]["name"], "Jita")
 

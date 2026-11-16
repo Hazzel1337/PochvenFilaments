@@ -29,11 +29,11 @@ Target: Jita  (The Forge, security 0.9)
 Graph:  5,175 gate-connected systems; filament radius 2.5 LY
 Origins: 27 Pochven systems / 389 exit systems / 556 exit pairs
 
-   #  Pochven origin    Exits   Min    Avg   Max
-  --  ----------------  -----  ----  -----  ----
-   1  Sakenta              24     0    2.7     7
-   2  Nani                 35     1    3.5     6
-   3  Senda                20     1    4.1    13
+  #  Pochven origin    Type      Krai         Exits   Min    Avg   Max
+  -  ----------------  --------  -----------  -----  ----  -----  ----
+  1  Sakenta           Border    Krai Perun      24     0    2.7     7
+  2  Nani              Internal  Krai Svarog     35     1    3.5     6
+  3  Senda             Border    Krai Veles      20     1    4.1    13
 ...
 ```
 
@@ -154,10 +154,11 @@ or double-click `web-ui.cmd`. The server is stdlib-only; `--port`, `--host`,
 - **Target box** with autocomplete over every K-space system.
 - **"2.5 LY exits" (default view)** — one row per exit system, sorted by gate
   jumps to your target, with columns: jumps, exit system, security, K-space
-  region, LY to the nearest origin, Pochven origin, Pochven krai. A `+N` chip
-  means the system is in range of N additional origins; click the row to list
-  every linked origin with its krai and exact LY distance.
-- **"Origins ranked"** — the CLI-style ranking, with the krai as a column.
+  region, LY to the nearest origin, Pochven origin, Triglavian type
+  (Border/Home/Internal) and Pochven krai. A `+N` chip means the system is in
+  range of N additional origins; click the row to list every linked origin with
+  its type, krai and exact LY distance.
+- **"Origins ranked"** — the CLI-style ranking, with type and krai columns.
 - **Sortable tables** — click any header in either view; click again to reverse.
 - **Filter** box matches system, origin and krai names.
 - **Min exit sec** re-ranks server-side, using the same filter as `--min-sec`.
@@ -182,7 +183,8 @@ PASS  every Pochven system has an exit within 1 LY
 PASS  known pair Sakenta->Ikuchi is ~0.334 LY
 PASS  every exit is gate-reachable (BFS from Jita)
 PASS  Pochven systems cover the three krais
-9/9 checks passed; 27 Pochven systems, 389 exit systems, 556 exit pairs
+PASS  Border/Home/Internal split is 6/3/18, two-one-six per krai
+10/10 checks passed; 27 Pochven systems, 389 exit systems, 556 exit pairs
 ```
 
 Unit tests: `python -m unittest -v test_pochven_filaments.py`.
@@ -209,8 +211,16 @@ of ships the filament can carry (`Maximum Ship Jump cap`), not a range.
 - Filament destination is random within range, so use `--sort avg` for expected
   travel time and `--sort max` for worst case.
 - Security is shown rounded to one decimal (EVE style); the JSON keeps 6.
+- **Border/Home/Internal is curated, not SDE-derived.** The dump has no such
+  field (`border` and `securityClass` are legacy map data). The table follows
+  the per-system in-game type as published by
+  [EDI](https://edencom.space/pochven_systems.php), checked 2026-11-16. It is
+  self-consistent: 6 Border (2 per krai, the known C729 systems), 1 Home per
+  krai, 6 Internal per krai. If CCP reclassifies a system, edit
+  `POCHVEN_SYSTEM_CLASSES` in `pochven_filaments.py`; `verify` will flag a
+  broken 6/3/18 split.
 - Data: [Fuzzwork SDE dump](https://www.fuzzwork.co.uk/dump/latest/csv/)
-  (mapSolarSystems, mapSolarSystemJumps, mapRegions).
+  (mapSolarSystems, mapSolarSystemJumps, mapRegions, mapConstellations).
 
 ## Files
 

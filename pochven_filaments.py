@@ -94,7 +94,7 @@ SDE_FILES = (
     "mapRegions.csv",
     "mapConstellations.csv",
 )
-CACHE_SCHEMA = 2
+CACHE_SCHEMA = 3
 USER_AGENT = "pochven-filaments/1.0 (+local EVE tool)"
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -108,6 +108,46 @@ URL_SOURCES = (
 )
 
 COMMANDS = ("fetch", "build", "route", "verify")
+
+# Triglavian system classification.  This is NOT in the SDE (the "border" and
+# "securityClass" columns are legacy map data, not the in-game type).  Curated
+# from the per-system "classed as a ... system by the Triglavians" statement
+# published by EDI (https://edencom.space/pochven_systems.php), checked
+# 2026-11-16, and cross-checked against the EVE University wiki, which notes
+# that each constellation has exactly one Home system:
+#   6 Border (2 per krai, and exactly the systems with C729 exits to K-space)
+#   3 Home   (1 per krai: Kino/Perun, Niarja/Svarog, Archee/Veles)
+#   18 Internal (6 per krai)
+POCHVEN_SYSTEM_CLASSES = {
+    "Ahtila": "Border",
+    "Arvasaras": "Border",
+    "Otanuomi": "Border",
+    "Sakenta": "Border",
+    "Senda": "Border",
+    "Urhinichi": "Border",
+    "Archee": "Home",
+    "Kino": "Home",
+    "Niarja": "Home",
+    "Ala": "Internal",
+    "Angymonne": "Internal",
+    "Harva": "Internal",
+    "Ichoriya": "Internal",
+    "Ignebaener": "Internal",
+    "Kaunokka": "Internal",
+    "Komo": "Internal",
+    "Konola": "Internal",
+    "Krirald": "Internal",
+    "Kuharah": "Internal",
+    "Nalvula": "Internal",
+    "Nani": "Internal",
+    "Otela": "Internal",
+    "Raravoss": "Internal",
+    "Skarkon": "Internal",
+    "Tunudan": "Internal",
+    "Vale": "Internal",
+    "Wirashoda": "Internal",
+}
+POCHVEN_CLASS_ORDER = ("Border", "Home", "Internal")
 
 
 # --------------------------------------------------------------------------
@@ -232,6 +272,13 @@ def build_cache(sde_dir: Path) -> dict:
         (s for s in systems.values() if s["region_id"] == POCHVEN_REGION_ID),
         key=lambda s: s["name"].lower(),
     )
+    missing_classes = [s["name"] for s in pochven if s["name"] not in POCHVEN_SYSTEM_CLASSES]
+    if missing_classes:
+        raise SystemExit(
+            "error: no Triglavian classification for "
+            + ", ".join(missing_classes)
+            + " - update POCHVEN_SYSTEM_CLASSES in pochven_filaments.py."
+        )
     candidates = [
         s
         for s in systems.values()
@@ -267,6 +314,7 @@ def build_cache(sde_dir: Path) -> dict:
             {
                 "id": p["id"],
                 "name": p["name"],
+                "system_class": POCHVEN_SYSTEM_CLASSES[p["name"]],
                 "constellation_id": p["constellation_id"],
                 "constellation": constellation_names.get(p["constellation_id"], ""),
                 "x": p["x"],
@@ -446,6 +494,7 @@ def compute_origins(
             {
                 "id": poch["id"],
                 "name": poch["name"],
+                "system_class": poch.get("system_class", ""),
                 "constellation": poch.get("constellation", ""),
                 "exits": exits,
                 "min_jumps": min(jump_counts),
@@ -473,15 +522,18 @@ def sort_origins(origins: list[dict], mode: str) -> list[dict]:
 def render_summary(origins: list[dict]) -> list[str]:
     rank_w = len(str(len(origins)))
     name_w = max([16] + [len(o["name"]) for o in origins])
+    type_w = max([4] + [len(o.get("system_class", "")) for o in origins])
     krai_w = max([4] + [len(o.get("constellation", "")) for o in origins])
     lines = [
-        f"  {'#':>{rank_w}}  {'Pochven origin':<{name_w}}  {'Krai':<{krai_w}}  "
-        f"{'Exits':>5}  {'Min':>4}  {'Avg':>5}  {'Max':>4}",
-        f"  {'-' * rank_w}  {'-' * name_w}  {'-' * krai_w}  {'-' * 5}  {'-' * 4}  {'-' * 5}  {'-' * 4}",
+        f"  {'#':>{rank_w}}  {'Pochven origin':<{name_w}}  {'Type':<{type_w}}  "
+        f"{'Krai':<{krai_w}}  {'Exits':>5}  {'Min':>4}  {'Avg':>5}  {'Max':>4}",
+        f"  {'-' * rank_w}  {'-' * name_w}  {'-' * type_w}  {'-' * krai_w}  "
+        f"{'-' * 5}  {'-' * 4}  {'-' * 5}  {'-' * 4}",
     ]
     for i, o in enumerate(origins, 1):
         lines.append(
-            f"  {i:>{rank_w}}  {o['name']:<{name_w}}  {o.get('constellation', ''):<{krai_w}}  "
+            f"  {i:>{rank_w}}  {o['name']:<{name_w}}  {o.get('system_class', ''):<{type_w}}  "
+            f"{o.get('constellation', ''):<{krai_w}}  "
             f"{len(o['exits']):>5}  {o['min_jumps']:>4}  {o['avg_jumps']:>5.1f}  {o['max_jumps']:>4}"
         )
     return lines
@@ -492,10 +544,11 @@ def render_details(origins: list[dict]) -> list[str]:
     region_w = max([12] + [len(e["region"]) for o in origins for e in o["exits"]])
     lines: list[str] = []
     for rank, o in enumerate(origins, 1):
-        krai = f" ({o['constellation']})" if o.get("constellation") else ""
+        tags = ", ".join(t for t in (o.get("system_class", ""), o.get("constellation", "")) if t)
         header = (
-            f"#{rank}  {o['name']}{krai}  -  {len(o['exits'])} exits, "
-            f"{o['min_jumps']}-{o['max_jumps']} jumps (avg {o['avg_jumps']:.1f})"
+            f"#{rank}  {o['name']}" + (f" ({tags})" if tags else "") + "  -  "
+            f"{len(o['exits'])} exits, {o['min_jumps']}-{o['max_jumps']} jumps "
+            f"(avg {o['avg_jumps']:.1f})"
         )
         lines.append(header)
         lines.append(
@@ -661,6 +714,7 @@ def cmd_route(args: argparse.Namespace) -> int:
                 {
                     "name": o["name"],
                     "id": o["id"],
+                    "system_class": o.get("system_class", ""),
                     "constellation": o.get("constellation", ""),
                     "min_jumps": o["min_jumps"],
                     "avg_jumps": round(o["avg_jumps"], 3),
@@ -772,6 +826,21 @@ def cmd_verify(args: argparse.Namespace) -> int:
         for p in pochven:
             assert len(p["exits"]) > 0
 
+    def check_classes() -> None:
+        classes = [p.get("system_class", "") for p in pochven]
+        assert set(classes) <= set(POCHVEN_CLASS_ORDER), f"unexpected classes: {set(classes) - set(POCHVEN_CLASS_ORDER)}"
+        assert classes.count("Border") == 6, f"expected 6 Border systems, found {classes.count('Border')}"
+        assert classes.count("Home") == 3, f"expected 3 Home systems, found {classes.count('Home')}"
+        assert classes.count("Internal") == 18, (
+            f"expected 18 Internal systems, found {classes.count('Internal')}"
+        )
+        expected = {"Krai Perun", "Krai Svarog", "Krai Veles"}
+        for krai in expected:
+            in_krai = [p for p in pochven if p["constellation"] == krai]
+            assert len(in_krai) == 9, f"{krai} has {len(in_krai)} systems, expected 9"
+            per_class = {c: sum(1 for p in in_krai if p["system_class"] == c) for c in POCHVEN_CLASS_ORDER}
+            assert per_class == {"Border": 2, "Home": 1, "Internal": 6}, f"{krai}: {per_class}"
+
     check(f"Pochven system count is 27", check_pochven_count)
     check("system names and exit lists are unique", check_unique)
     check("cached counts match recomputed counts", check_counts)
@@ -781,6 +850,7 @@ def cmd_verify(args: argparse.Namespace) -> int:
     check("known pair Sakenta->Ikuchi is ~0.334 LY", check_known_distance)
     check("every exit is gate-reachable (BFS from Jita)", check_graph)
     check("Pochven systems cover the three krais", check_krais)
+    check("Border/Home/Internal split is 6/3/18, two-one-six per krai", check_classes)
 
     for ok, label in checks:
         print(f"{'PASS' if ok else 'FAIL'}  {label}")

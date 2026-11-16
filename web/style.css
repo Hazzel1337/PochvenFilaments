@@ -228,6 +228,11 @@ tr.detail > td {
 .sec.low { color: var(--low); }
 .sec.null { color: var(--null); }
 
+.type { font-weight: 600; }
+.type.t-border { color: var(--accent); }
+.type.t-home { color: var(--high); }
+.type.t-internal { color: var(--muted); }
+
 .badge {
   display: inline-block;
   margin-left: .45rem;

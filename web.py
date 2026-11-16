@@ -101,6 +101,7 @@ class App:
                 {
                     "name": o["name"],
                     "id": o["id"],
+                    "system_class": o.get("system_class", ""),
                     "constellation": o.get("constellation", ""),
                     "min_jumps": o["min_jumps"],
                     "avg_jumps": round(o["avg_jumps"], 3),

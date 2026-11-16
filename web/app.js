@@ -86,6 +86,7 @@ function exitGroups() {
       group.links.push({
         origin: origin.name,
         constellation: origin.constellation || "",
+        type: origin.system_class || "",
         ly: exit.ly,
       });
     }
@@ -95,6 +96,7 @@ function exitGroups() {
     group.links.sort((a, b) => a.ly - b.ly);
     group.ly = group.links[0].ly;
     group.origin = group.links[0].origin;
+    group.type = group.links[0].type;
     group.krai = group.links[0].constellation;
   }
   return groups;
@@ -107,9 +109,12 @@ function groupMatches(group, needle) {
   return group.links.some(
     (link) =>
       link.origin.toLowerCase().includes(needle) ||
+      (link.type || "").toLowerCase().includes(needle) ||
       (link.constellation || "").toLowerCase().includes(needle)
   );
 }
+
+const typeClass = (value) => "t-" + String(value).toLowerCase();
 
 /* ---------- rendering ---------- */
 
@@ -119,6 +124,7 @@ function renderOrigins() {
     (origin) =>
       !needle ||
       origin.name.toLowerCase().includes(needle) ||
+      (origin.system_class || "").toLowerCase().includes(needle) ||
       (origin.constellation || "").toLowerCase().includes(needle)
   );
   const origins = sortRows(rows, state.sort.key, state.sort.dir);
@@ -132,6 +138,7 @@ function renderOrigins() {
       <tr class="origin${open ? " open" : ""}" data-origin="${esc(origin.name)}">
         <td class="rank">${index + 1}</td>
         <td class="name"><span class="caret">${open ? "\u25BE" : "\u25B8"}</span>${esc(origin.name)}</td>
+        <td class="type ${typeClass(origin.system_class)}">${esc(origin.system_class || "")}</td>
         <td class="krai">${esc(origin.constellation || "")}</td>
         <td class="num">${origin.exits.length}</td>
         <td class="num">${origin.min_jumps}</td>
@@ -169,7 +176,7 @@ function originDetail(origin) {
       </tr>`
     )
     .join("");
-  return `<tr class="detail"><td colspan="7"><div class="detail-wrap"><table><thead>${head}</thead><tbody>${rows}</tbody></table></div></td></tr>`;
+  return `<tr class="detail"><td colspan="8"><div class="detail-wrap"><table><thead>${head}</thead><tbody>${rows}</tbody></table></div></td></tr>`;
 }
 
 function renderExits() {
@@ -194,6 +201,7 @@ function renderExits() {
         <td>${esc(group.region)}</td>
         <td class="num">${group.ly.toFixed(3)}</td>
         <td>${esc(group.origin)}${linkable ? `<span class="more">+${group.links.length - 1}</span>` : ""}</td>
+        <td class="type ${typeClass(group.type)}">${esc(group.type)}</td>
         <td class="krai">${esc(group.krai)}</td>
       </tr>`;
     if (open && linkable) html += exitDetail(group);
@@ -210,16 +218,17 @@ function exitDetail(group) {
       (link) => `
       <tr>
         <td>${esc(link.origin)}</td>
+        <td class="type ${typeClass(link.type)}">${esc(link.type)}</td>
         <td class="krai">${esc(link.constellation)}</td>
         <td class="num">${link.ly.toFixed(3)}</td>
       </tr>`
     )
     .join("");
   return `
-    <tr class="detail"><td colspan="7"><div class="detail-wrap">
+    <tr class="detail"><td colspan="8"><div class="detail-wrap">
       <div class="detail-title">${esc(group.name)} is within 2.5 LY of these Pochven systems</div>
       <table>
-        <thead><tr><th>Pochven origin</th><th>Krai</th><th class="num">LY from origin</th></tr></thead>
+        <thead><tr><th>Pochven origin</th><th>Type</th><th>Krai</th><th class="num">LY from origin</th></tr></thead>
         <tbody>${rows}</tbody>
       </table>
     </div></td></tr>`;
